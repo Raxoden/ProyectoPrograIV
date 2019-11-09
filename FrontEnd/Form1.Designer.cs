@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbUsuario = new System.Windows.Forms.TextBox();
+            this.tbContrasenna = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 22);
-            this.textBox1.TabIndex = 0;
+            this.tbUsuario.Location = new System.Drawing.Point(41, 73);
+            this.tbUsuario.Name = "tbUsuario";
+            this.tbUsuario.Size = new System.Drawing.Size(240, 22);
+            this.tbUsuario.TabIndex = 0;
             // 
-            // textBox2
+            // tbContrasenna
             // 
-            this.textBox2.Location = new System.Drawing.Point(41, 153);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 22);
-            this.textBox2.TabIndex = 1;
+            this.tbContrasenna.Location = new System.Drawing.Point(41, 153);
+            this.tbContrasenna.Name = "tbContrasenna";
+            this.tbContrasenna.PasswordChar = '*';
+            this.tbContrasenna.Size = new System.Drawing.Size(240, 22);
+            this.tbContrasenna.TabIndex = 1;
             // 
             // button1
             // 
@@ -57,6 +58,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -84,8 +86,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbContrasenna);
+            this.Controls.Add(this.tbUsuario);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
@@ -99,8 +101,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbUsuario;
+        private System.Windows.Forms.TextBox tbContrasenna;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

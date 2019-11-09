@@ -9,21 +9,22 @@ namespace BackEnd
 {
     public class FuncionesDB
     {
-        public void Validacion(string us, string pa)
+        public Boolean Validacion(int us, string pa)
         {
             try
             {
                 using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
                 {
                     var query = from U in PE.Usuario 
-                                where U.ID_Colaborador == Convert.ToInt32(us) & 
+                                where U.ID_Colaborador == us & 
                                 U.Contrasenna == pa select U.Privilegios;
+                    return Convert.ToBoolean(query.ToList().FirstOrDefault());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
 
