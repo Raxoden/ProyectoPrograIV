@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FrontEnd
 {
-    public partial class FormUsuario : Form
+    public partial class AdmUsuarios : Form
     {
-        public FormUsuario()
+        public AdmUsuarios()
         {
             InitializeComponent();
         }

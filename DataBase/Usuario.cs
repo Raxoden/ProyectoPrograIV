@@ -15,9 +15,9 @@ namespace DataBase
     public partial class Usuario
     {
         public int ID_Usuario { get; set; }
-        public Nullable<int> ID_Colaborador { get; set; }
+        public int ID_Colaborador { get; set; }
         public string Contrasenna { get; set; }
-        public Nullable<bool> Privilegios { get; set; }
+        public bool Privilegios { get; set; }
     
         public virtual Colaborador Colaborador { get; set; }
     }

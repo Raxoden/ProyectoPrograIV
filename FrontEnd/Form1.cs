@@ -30,5 +30,16 @@ namespace FrontEnd
                 MessageBox.Show("Los datos ingresados son incorrectos.");
             }
         }
+
+        private void tbUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {//Acceso: 105190742 , RX1810
+            if ((Char.IsDigit(e.KeyChar) && tbUsuario.Text.Length <= 8) || Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            } else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

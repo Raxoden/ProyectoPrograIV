@@ -23,11 +23,11 @@ namespace DataBase
         public int ID_Colaborador { get; set; }
         public string Nombre { get; set; }
         public string Genero { get; set; }
-        public Nullable<int> Edad { get; set; }
-        public Nullable<System.DateTime> Fecha_Nacimiento { get; set; }
-        public Nullable<System.DateTime> Fecha_Ingreso { get; set; }
-        public Nullable<int> ID_Puesto { get; set; }
-        public Nullable<int> ID_Area { get; set; }
+        public int Edad { get; set; }
+        public System.DateTime Fecha_Nacimiento { get; set; }
+        public System.DateTime Fecha_Ingreso { get; set; }
+        public int ID_Puesto { get; set; }
+        public int ID_Area { get; set; }
     
         public virtual Area Area { get; set; }
         public virtual Puesto Puesto { get; set; }

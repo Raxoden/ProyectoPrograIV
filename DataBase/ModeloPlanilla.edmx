@@ -10,41 +10,39 @@
             <PropertyRef Name="ID_Area" />
           </Key>
           <Property Name="ID_Area" Type="int" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Colaborador">
           <Key>
             <PropertyRef Name="ID_Colaborador" />
           </Key>
           <Property Name="ID_Colaborador" Type="int" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="60" />
-          <Property Name="Genero" Type="char" MaxLength="1" />
-          <Property Name="Edad" Type="int" />
-          <Property Name="Fecha_Nacimiento" Type="date" />
-          <Property Name="Fecha_Ingreso" Type="date" />
-          <Property Name="ID_Puesto" Type="int" />
-          <Property Name="ID_Area" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Genero" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Edad" Type="int" Nullable="false" />
+          <Property Name="Fecha_Nacimiento" Type="date" Nullable="false" />
+          <Property Name="Fecha_Ingreso" Type="date" Nullable="false" />
+          <Property Name="ID_Puesto" Type="int" Nullable="false" />
+          <Property Name="ID_Area" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Puesto">
           <Key>
             <PropertyRef Name="ID_Puesto" />
           </Key>
           <Property Name="ID_Puesto" Type="int" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="ID_Usuario" />
           </Key>
           <Property Name="ID_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_Colaborador" Type="int" />
-          <Property Name="Contrasenna" Type="varchar" MaxLength="30" />
-          <Property Name="Privilegios" Type="bit" />
+          <Property Name="ID_Colaborador" Type="int" Nullable="false" />
+          <Property Name="Contrasenna" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Privilegios" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Colaborad__ID_Ar__403A8C7D">
-          <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
+        <Association Name="FK__Colaborad__ID_Ar__6383C8BA">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Area">
@@ -55,8 +53,8 @@ advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene defini
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Colaborad__ID_Pu__3F466844">
-          <End Role="Puesto" Type="Self.Puesto" Multiplicity="0..1" />
+        <Association Name="FK__Colaborad__ID_Pu__628FA481">
+          <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Puesto">
@@ -67,8 +65,8 @@ advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene defini
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__ID_Cola__4CA06362">
-          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+        <Association Name="FK__Usuario__ID_Cola__66603565">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Colaborador">
@@ -83,23 +81,16 @@ advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene defini
           <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Colaborador" EntityType="Self.Colaborador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Puesto" EntityType="Self.Puesto" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Usuario].[ID_Usuario] AS [ID_Usuario], 
-    [Usuario].[ID_Colaborador] AS [ID_Colaborador], 
-    [Usuario].[Contrasenna] AS [Contrasenna], 
-    [Usuario].[Privilegios] AS [Privilegios]
-    FROM [dbo].[Usuario] AS [Usuario]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK__Colaborad__ID_Ar__403A8C7D" Association="Self.FK__Colaborad__ID_Ar__403A8C7D">
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Colaborad__ID_Ar__6383C8BA" Association="Self.FK__Colaborad__ID_Ar__6383C8BA">
             <End Role="Area" EntitySet="Area" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Colaborad__ID_Pu__3F466844" Association="Self.FK__Colaborad__ID_Pu__3F466844">
+          <AssociationSet Name="FK__Colaborad__ID_Pu__628FA481" Association="Self.FK__Colaborad__ID_Pu__628FA481">
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__ID_Cola__4CA06362" Association="Self.FK__Usuario__ID_Cola__4CA06362">
+          <AssociationSet Name="FK__Usuario__ID_Cola__66603565" Association="Self.FK__Usuario__ID_Cola__66603565">
             <End Role="Colaborador" EntitySet="Colaborador" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -114,45 +105,45 @@ advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene defini
             <PropertyRef Name="ID_Area" />
           </Key>
           <Property Name="ID_Area" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Colaborad__ID_Ar__403A8C7D" FromRole="Area" ToRole="Colaborador" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Colaborad__ID_Ar__6383C8BA" FromRole="Area" ToRole="Colaborador" />
         </EntityType>
         <EntityType Name="Colaborador">
           <Key>
             <PropertyRef Name="ID_Colaborador" />
           </Key>
           <Property Name="ID_Colaborador" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="Genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="Edad" Type="Int32" />
-          <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="0" />
-          <Property Name="Fecha_Ingreso" Type="DateTime" Precision="0" />
-          <Property Name="ID_Puesto" Type="Int32" />
-          <Property Name="ID_Area" Type="Int32" />
-          <NavigationProperty Name="Area" Relationship="Self.FK__Colaborad__ID_Ar__403A8C7D" FromRole="Colaborador" ToRole="Area" />
-          <NavigationProperty Name="Puesto" Relationship="Self.FK__Colaborad__ID_Pu__3F466844" FromRole="Colaborador" ToRole="Puesto" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__ID_Cola__4CA06362" FromRole="Colaborador" ToRole="Usuario" />
+          <Property Name="Nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Edad" Type="Int32" Nullable="false" />
+          <Property Name="Fecha_Nacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Fecha_Ingreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ID_Puesto" Type="Int32" Nullable="false" />
+          <Property Name="ID_Area" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Area" Relationship="Self.FK__Colaborad__ID_Ar__6383C8BA" FromRole="Colaborador" ToRole="Area" />
+          <NavigationProperty Name="Puesto" Relationship="Self.FK__Colaborad__ID_Pu__628FA481" FromRole="Colaborador" ToRole="Puesto" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__ID_Cola__66603565" FromRole="Colaborador" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Puesto">
           <Key>
             <PropertyRef Name="ID_Puesto" />
           </Key>
           <Property Name="ID_Puesto" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Colaborad__ID_Pu__3F466844" FromRole="Puesto" ToRole="Colaborador" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Colaborad__ID_Pu__628FA481" FromRole="Puesto" ToRole="Colaborador" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="ID_Usuario" />
           </Key>
           <Property Name="ID_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_Colaborador" Type="Int32" />
-          <Property Name="Contrasenna" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Privilegios" Type="Boolean" />
-          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Usuario__ID_Cola__4CA06362" FromRole="Usuario" ToRole="Colaborador" />
+          <Property Name="ID_Colaborador" Type="Int32" Nullable="false" />
+          <Property Name="Contrasenna" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Privilegios" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Usuario__ID_Cola__66603565" FromRole="Usuario" ToRole="Colaborador" />
         </EntityType>
-        <Association Name="FK__Colaborad__ID_Ar__403A8C7D">
-          <End Role="Area" Type="Self.Area" Multiplicity="0..1" />
+        <Association Name="FK__Colaborad__ID_Ar__6383C8BA">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Area">
@@ -163,8 +154,8 @@ advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene defini
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Colaborad__ID_Pu__3F466844">
-          <End Role="Puesto" Type="Self.Puesto" Multiplicity="0..1" />
+        <Association Name="FK__Colaborad__ID_Pu__628FA481">
+          <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Puesto">
@@ -175,8 +166,8 @@ advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene defini
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__ID_Cola__4CA06362">
-          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="0..1" />
+        <Association Name="FK__Usuario__ID_Cola__66603565">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Colaborador">
@@ -187,20 +178,20 @@ advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene defini
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SistemaPlanillaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SistemaPlanillaEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Area" EntityType="Self.Area" />
           <EntitySet Name="Colaborador" EntityType="Self.Colaborador" />
           <EntitySet Name="Puesto" EntityType="Self.Puesto" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <AssociationSet Name="FK__Colaborad__ID_Ar__403A8C7D" Association="Self.FK__Colaborad__ID_Ar__403A8C7D">
+          <AssociationSet Name="FK__Colaborad__ID_Ar__6383C8BA" Association="Self.FK__Colaborad__ID_Ar__6383C8BA">
             <End Role="Area" EntitySet="Area" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Colaborad__ID_Pu__3F466844" Association="Self.FK__Colaborad__ID_Pu__3F466844">
+          <AssociationSet Name="FK__Colaborad__ID_Pu__628FA481" Association="Self.FK__Colaborad__ID_Pu__628FA481">
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__ID_Cola__4CA06362" Association="Self.FK__Usuario__ID_Cola__4CA06362">
+          <AssociationSet Name="FK__Usuario__ID_Cola__66603565" Association="Self.FK__Usuario__ID_Cola__66603565">
             <End Role="Colaborador" EntitySet="Colaborador" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -210,7 +201,7 @@ advertencia 6002: La tabla o vista 'SistemaPlanilla.dbo.Usuario' no tiene defini
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SistemaPlanillaModelStoreContainer" CdmEntityContainer="SistemaPlanillaEntities">
+        <EntityContainerMapping StorageEntityContainer="SistemaPlanillaModelStoreContainer" CdmEntityContainer="SistemaPlanillaEntities1">
           <EntitySetMapping Name="Area">
             <EntityTypeMapping TypeName="SistemaPlanillaModel.Area">
               <MappingFragment StoreEntitySet="Area">

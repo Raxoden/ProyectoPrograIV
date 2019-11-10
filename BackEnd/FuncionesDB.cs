@@ -15,16 +15,19 @@ namespace BackEnd
             {
                 using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
                 {
-                    var query = from U in PE.Usuario 
+                    var query = (from U in PE.Usuario 
                                 where U.ID_Colaborador == us & 
-                                U.Contrasenna == pa select U.ID_Colaborador;
-                    if (query != null)
+                                U.Contrasenna == pa select U.ID_Colaborador).ToList();
+                    Console.WriteLine();
+                    if (query.FirstOrDefault() > 0)
                     {
                         return true;
-                    } else
+                    }
+                    else
                     {
                         return false;
                     }
+                    
                 }
             }
             catch (Exception ex)
@@ -42,21 +45,21 @@ namespace BackEnd
 
                     using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
                     {
-                        var query = from C in PE.Colaborador
+                        var query = (from C in PE.Colaborador
                                     join A in PE.Area on C.ID_Area equals A.ID_Area
                                     join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
                                     select new Colaborador
                                     {
                                         ID_Colaborador = C.ID_Colaborador,
                                         Nombre = C.Nombre,
-                                        Genero = Convert.ToString(C.Genero),
-                                        Edad = Convert.ToInt32(C.Edad),
-                                        Fecha_Nacimiento = Convert.ToDateTime(C.Fecha_Nacimiento),
-                                        Fecha_Ingreso = Convert.ToDateTime(C.Fecha_Ingreso),
+                                        Genero = C.Genero,
+                                        Edad = C.Edad,
+                                        Fecha_Nacimiento = C.Fecha_Nacimiento.ToString(),
+                                        Fecha_Ingreso = C.Fecha_Ingreso.ToString(),
                                         Desc_Puesto = P.Descripcion,
                                         Desc_Area = A.Descripcion
-                                    };
-                        return query.ToList();
+                                    }).ToList();
+                        return query;
                     }
                 }
                 catch (Exception ex)

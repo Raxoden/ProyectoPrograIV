@@ -13,8 +13,8 @@ namespace BackEnd
         public string Nombre { get; set; }
         public string Genero { get; set; }
         public int Edad { get; set; }
-        public DateTime Fecha_Nacimiento { get; set; }
-        public DateTime Fecha_Ingreso { get; set; }
+        public string Fecha_Nacimiento { get; set; }
+        public string Fecha_Ingreso { get; set; }
         public string Desc_Puesto { get; set; }
         public string Desc_Area { get; set; }
 

@@ -56,17 +56,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdmColaboradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmColaboradores.Designer.cs">
+      <DependentUpon>AdmColaboradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmUsuarios.Designer.cs">
+      <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUsuario.Designer.cs">
-      <DependentUpon>FormUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -78,9 +84,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUsuario.resx">
-      <DependentUpon>FormUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
