@@ -49,7 +49,7 @@ namespace BackEnd
                                     {
                                         ID_Colaborador = C.ID_Colaborador,
                                         Nombre = C.Nombre,
-                                        Genero = Convert.ToChar(C.Genero),
+                                        Genero = Convert.ToString(C.Genero),
                                         Edad = Convert.ToInt32(C.Edad),
                                         Fecha_Nacimiento = Convert.ToDateTime(C.Fecha_Nacimiento),
                                         Fecha_Ingreso = Convert.ToDateTime(C.Fecha_Ingreso),
@@ -67,5 +67,6 @@ namespace BackEnd
 
             }
         }
+
     }
 }

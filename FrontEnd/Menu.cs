@@ -43,5 +43,11 @@ namespace FrontEnd
                 dgvDatos.DataSource = query.ToList();
             }
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsuario formusuario = new FormUsuario();
+            formusuario.Show();
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace BackEnd
 
         public int ID_Colaborador { get; set; }
         public string Nombre { get; set; }
-        public char Genero { get; set; }
+        public string Genero { get; set; }
         public int Edad { get; set; }
         public DateTime Fecha_Nacimiento { get; set; }
         public DateTime Fecha_Ingreso { get; set; }
