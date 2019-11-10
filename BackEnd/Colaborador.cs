@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
-    class Colaborador {
+    public class Colaborador {
 
 
         public int ID_Colaborador { get; set; }

@@ -23,7 +23,7 @@ namespace FrontEnd
             FuncionesDB fdb = new FuncionesDB();
             if (fdb.Validacion(Convert.ToInt32(tbUsuario.Text), tbContrasenna.Text.Normalize()))
             {
-                Menu m = new Menu();
+                Menu m = new Menu(Convert.ToInt32(tbUsuario.Text));
                 m.Show();
             } else
             {

@@ -17,8 +17,14 @@ namespace BackEnd
                 {
                     var query = from U in PE.Usuario 
                                 where U.ID_Colaborador == us & 
-                                U.Contrasenna == pa select U.Privilegios;
-                    return Convert.ToBoolean(query.ToList().FirstOrDefault());
+                                U.Contrasenna == pa select U.ID_Colaborador;
+                    if (query != null)
+                    {
+                        return true;
+                    } else
+                    {
+                        return false;
+                    }
                 }
             }
             catch (Exception ex)
@@ -28,11 +34,12 @@ namespace BackEnd
             }
         }
 
-        public object Consulta()
+        public List<Colaborador> Consulta()
         {
             {
                 try
                 {
+
                     using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
                     {
                         var query = from C in PE.Colaborador
