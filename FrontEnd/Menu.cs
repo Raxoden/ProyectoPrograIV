@@ -24,5 +24,11 @@ namespace FrontEnd
         {
             dgvDatos.DataSource = fdb.Consulta();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormUsuario formusuario = new FormUsuario();
+            formusuario.Show();
+        }
     }
 }
