@@ -37,7 +37,7 @@ namespace BackEnd
             }
         }
 
-        public Colaborador Busqueda(int ID)
+        public Colaborador BusquedaColaborador(int ID)
         {
             try
             {
@@ -68,8 +68,36 @@ namespace BackEnd
                 return null;
             }
         }
+        public Usuario BusquedaUsuario(int ID)
+        {
+            try
+            {
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    var query = (from C in PE.Colaborador
+                                 join A in PE.Area on C.ID_Area equals A.ID_Area
+                                 join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                                 join U in PE.Usuario on C.ID_Colaborador equals U.ID_Colaborador
+                                 where C.ID_Colaborador == ID
+                                 select new Usuario
+                                 {
+                                     ID_Colaborador = C.ID_Colaborador,
+                                     Nombre = C.Nombre,
+                                     Desc_Puesto = P.Descripcion,
+                                     Desc_Area = A.Descripcion,
+                                     Privilegios = U.Privilegios
+                                 }).ToList().FirstOrDefault();
+                    return query;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
 
-        public List<Colaborador> Consulta()
+        public List<Colaborador> ConsultaColaboradores()
         {
             try
             {

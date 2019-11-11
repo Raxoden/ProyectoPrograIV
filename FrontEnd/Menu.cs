@@ -15,10 +15,10 @@ namespace FrontEnd
     public partial class Menu : Form
     {
         FuncionesDB fdb = new FuncionesDB();
-        BackEnd.Colaborador Usuario;
+        BackEnd.Usuario Usuario;
         public Menu(int ID_Usuario)
         {
-            Usuario = fdb.Busqueda(ID_Usuario);
+            Usuario = fdb.BusquedaUsuario(ID_Usuario);
             InitializeComponent();
         }
 
@@ -28,18 +28,34 @@ namespace FrontEnd
             lbID.Text = "ID: " + Usuario.ID_Colaborador;
             lbArea.Text = "Area: " + Usuario.Desc_Area;
             lbPuesto.Text = "Puesto: " + Usuario.Desc_Puesto;
+            if (Usuario.Privilegios)
+            {
+                tsUsuario.Visible = true;
+                tsUsuario.Enabled = true;
+            }
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdmUsuarios au = new AdmUsuarios();
-            au.Show();
+            AdmUsuarios au = new AdmUsuarios(Usuario);
+            if (!au.Visible)
+            {
+                au.Show();
+            }
         }
 
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdmUsuarios ac = new AdmUsuarios();
-            ac.Show();
+            AdmColaboradores ac = new AdmColaboradores(Usuario);
+            if (!ac.Visible)
+            {
+                ac.Show();
+            }
+        }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

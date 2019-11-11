@@ -54,6 +54,7 @@
     <Compile Include="Colaborador.cs" />
     <Compile Include="FuncionesDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataBase\DataBase.csproj">

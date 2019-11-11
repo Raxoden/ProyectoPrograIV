@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BackEnd;
 
 namespace FrontEnd
 {
     public partial class AdmColaboradores : Form
     {
-        public AdmColaboradores()
+        public AdmColaboradores(Usuario Usuario)
         {
             InitializeComponent();
         }

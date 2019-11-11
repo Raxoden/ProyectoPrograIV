@@ -25,6 +25,7 @@ namespace FrontEnd
             {
                 Menu m = new Menu(Convert.ToInt32(tbUsuario.Text));
                 m.Show();
+                this.Visible = false;
             } else
             {
                 MessageBox.Show("Los datos ingresados son incorrectos.");

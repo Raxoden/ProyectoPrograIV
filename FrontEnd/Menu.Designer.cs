@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsColaborador = new System.Windows.Forms.ToolStripMenuItem();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.lbArea = new System.Windows.Forms.Label();
@@ -42,30 +42,30 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem,
-            this.colaboradoresToolStripMenuItem});
+            this.tsUsuario,
+            this.tsColaborador});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(605, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(605, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // usuariosToolStripMenuItem
+            // tsUsuario
             // 
-            this.usuariosToolStripMenuItem.Enabled = false;
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Visible = false;
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            this.tsUsuario.Enabled = false;
+            this.tsUsuario.Name = "tsUsuario";
+            this.tsUsuario.Size = new System.Drawing.Size(79, 24);
+            this.tsUsuario.Text = "Usuarios";
+            this.tsUsuario.Visible = false;
+            this.tsUsuario.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
-            // colaboradoresToolStripMenuItem
+            // tsColaborador
             // 
-            this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
-            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
-            this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
-            this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
+            this.tsColaborador.Name = "tsColaborador";
+            this.tsColaborador.Size = new System.Drawing.Size(121, 24);
+            this.tsColaborador.Text = "Colaboradores";
+            this.tsColaborador.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
             // 
             // lbUsuario
             // 
@@ -116,7 +116,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -127,8 +129,8 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsUsuario;
+        private System.Windows.Forms.ToolStripMenuItem tsColaborador;
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbArea;
