@@ -15,10 +15,14 @@ namespace FrontEnd
     public partial class Menu : Form
     {
         FuncionesDB fdb = new FuncionesDB();
+        AdmColaboradores ac;
+        AdmUsuarios au;
         BackEnd.Usuario Usuario;
         public Menu(int ID_Usuario)
         {
             Usuario = fdb.BusquedaUsuario(ID_Usuario);
+            ac = new AdmColaboradores(Usuario);
+            au = new AdmUsuarios(Usuario);
             InitializeComponent();
         }
 
@@ -37,24 +41,32 @@ namespace FrontEnd
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdmUsuarios au = new AdmUsuarios(Usuario);
             if (!au.Visible)
             {
-                au.Show();
+                au.Visible = true;
             }
         }
 
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdmColaboradores ac = new AdmColaboradores(Usuario);
             if (!ac.Visible)
             {
-                ac.Show();
+                ac.Visible = true;
+            }
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Si cierra esta ventana cerrara el programa", "Aviso!", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                e.Cancel = true;
             }
         }
 
         private void Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
+            au.Dispose();
+            ac.Dispose();
             Application.Exit();
         }
     }

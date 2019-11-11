@@ -36,12 +36,10 @@ namespace BackEnd
                 return false;
             }
         }
-
         public Colaborador BusquedaColaborador(int ID)
         {
             try
             {
-
                 using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
                 {
                     var query = (from C in PE.Colaborador
@@ -96,28 +94,75 @@ namespace BackEnd
                 return null;
             }
         }
-
-        public List<Colaborador> ConsultaColaboradores()
+        public List<Colaborador> ConsultaColaboradores(Usuario us)
         {
             try
             {
-
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    if (us.Privilegios)
+                    {
+                        var query = (from C in PE.Colaborador
+                                     join A in PE.Area on C.ID_Area equals A.ID_Area
+                                     join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                                     select new Colaborador
+                                     {
+                                         ID_Colaborador = C.ID_Colaborador,
+                                         Nombre = C.Nombre,
+                                         Genero = C.Genero,
+                                         Edad = C.Edad,
+                                         Fecha_Nacimiento = C.Fecha_Nacimiento.ToString(),
+                                         Fecha_Ingreso = C.Fecha_Ingreso.ToString(),
+                                         Desc_Puesto = P.Descripcion,
+                                         Desc_Area = A.Descripcion
+                                     }).ToList();
+                        return query;
+                    }
+                    else
+                    {
+                        var query = (from C in PE.Colaborador
+                                     join A in PE.Area on C.ID_Area equals A.ID_Area
+                                     join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                                     where A.Descripcion == us.Desc_Area
+                                     select new Colaborador
+                                     {
+                                         ID_Colaborador = C.ID_Colaborador,
+                                         Nombre = C.Nombre,
+                                         Genero = C.Genero,
+                                         Edad = C.Edad,
+                                         Fecha_Nacimiento = C.Fecha_Nacimiento.ToString(),
+                                         Fecha_Ingreso = C.Fecha_Ingreso.ToString(),
+                                         Desc_Puesto = P.Descripcion,
+                                         Desc_Area = A.Descripcion
+                                     }).ToList();
+                        return query;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+        public List<Usuario> ConsultaUsuarios()
+        {
+            try
+            {
                 using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
                 {
                     var query = (from C in PE.Colaborador
-                                join A in PE.Area on C.ID_Area equals A.ID_Area
-                                join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
-                                select new Colaborador
-                                {
-                                    ID_Colaborador = C.ID_Colaborador,
-                                    Nombre = C.Nombre,
-                                    Genero = C.Genero,
-                                    Edad = C.Edad,
-                                    Fecha_Nacimiento = C.Fecha_Nacimiento.ToString(),
-                                    Fecha_Ingreso = C.Fecha_Ingreso.ToString(),
-                                    Desc_Puesto = P.Descripcion,
-                                    Desc_Area = A.Descripcion
-                                }).ToList();
+                                    join A in PE.Area on C.ID_Area equals A.ID_Area
+                                    join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                                    join U in PE.Usuario on C.ID_Colaborador equals U.ID_Colaborador
+                                    select new Usuario
+                                    {
+                                        ID_Colaborador = C.ID_Colaborador,
+                                        Nombre = C.Nombre,
+                                        Desc_Puesto = P.Descripcion,
+                                        Desc_Area = A.Descripcion,
+                                        Privilegios = U.Privilegios
+                                    }).ToList();
                     return query;
                 }
             }
@@ -127,6 +172,62 @@ namespace BackEnd
                 return null;
             }
         }
-
+        
+        #region Usuarios
+        public bool RegistrarUsuario(int ID, string Contrasenna, bool Privilegio)
+        {
+            if (BusquedaUsuario(ID) == null)
+            {
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    DataBase.Usuario usuario = new DataBase.Usuario();
+                    usuario.ID_Colaborador = ID;
+                    usuario.Contrasenna = Contrasenna;
+                    usuario.Privilegios = Privilegio;
+                    PE.Usuario.Add(usuario);
+                    PE.SaveChanges();
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ActualizarUsuario(int ID, string Contrasenna, bool Privilegio)
+        {
+            if (BusquedaUsuario(ID) == null)
+            {
+                return false;
+            } else
+            {
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    DataBase.Usuario usuario = PE.Usuario.Where(x => x.ID_Colaborador == ID).FirstOrDefault();
+                    usuario.Contrasenna = Contrasenna;
+                    usuario.Privilegios = Privilegio;
+                    PE.SaveChanges();
+                    return true;
+                }
+            }
+        }
+        public bool EliminarUsuario(int ID)
+        {
+            if (BusquedaUsuario(ID) == null)
+            {
+                return false;
+            }
+            else
+            {
+                using(SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    DataBase.Usuario usuario = PE.Usuario.Where(x => x.ID_Colaborador == ID).FirstOrDefault();
+                    PE.Usuario.Remove(usuario);
+                    PE.SaveChanges();
+                    return true;
+                }
+            }
+        }
+        #endregion
     }
 }

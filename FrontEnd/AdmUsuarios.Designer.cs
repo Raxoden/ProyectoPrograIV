@@ -28,48 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbId = new System.Windows.Forms.TextBox();
             this.dgvColaboradores = new System.Windows.Forms.DataGridView();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbPrivilegio = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.tbContrasenna = new System.Windows.Forms.TextBox();
+            this.tbConfirmar = new System.Windows.Forms.TextBox();
+            this.btCrear = new System.Windows.Forms.Button();
+            this.btModificar = new System.Windows.Forms.Button();
+            this.btEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbId
             // 
-            this.textBox1.Location = new System.Drawing.Point(169, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 22);
-            this.textBox1.TabIndex = 0;
+            this.tbId.Location = new System.Drawing.Point(169, 22);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(211, 22);
+            this.tbId.TabIndex = 0;
             // 
             // dgvColaboradores
             // 
+            this.dgvColaboradores.AllowUserToAddRows = false;
+            this.dgvColaboradores.AllowUserToDeleteRows = false;
+            this.dgvColaboradores.AllowUserToResizeColumns = false;
+            this.dgvColaboradores.AllowUserToResizeRows = false;
             this.dgvColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvColaboradores.Location = new System.Drawing.Point(12, 204);
+            this.dgvColaboradores.MultiSelect = false;
             this.dgvColaboradores.Name = "dgvColaboradores";
+            this.dgvColaboradores.ReadOnly = true;
             this.dgvColaboradores.RowHeadersWidth = 51;
             this.dgvColaboradores.RowTemplate.Height = 24;
             this.dgvColaboradores.Size = new System.Drawing.Size(370, 234);
             this.dgvColaboradores.TabIndex = 1;
+            this.dgvColaboradores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColaboradores_CellClick);
             // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.AllowUserToResizeColumns = false;
+            this.dgvUsuarios.AllowUserToResizeRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(418, 204);
+            this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 24;
             this.dgvUsuarios.Size = new System.Drawing.Size(370, 234);
             this.dgvUsuarios.TabIndex = 2;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // label1
             // 
@@ -80,16 +94,16 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ID:";
             // 
-            // radioButton1
+            // rbPrivilegio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(418, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(93, 21);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Privilegios";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbPrivilegio.AutoSize = true;
+            this.rbPrivilegio.Location = new System.Drawing.Point(418, 23);
+            this.rbPrivilegio.Name = "rbPrivilegio";
+            this.rbPrivilegio.Size = new System.Drawing.Size(93, 21);
+            this.rbPrivilegio.TabIndex = 4;
+            this.rbPrivilegio.TabStop = true;
+            this.rbPrivilegio.Text = "Privilegios";
+            this.rbPrivilegio.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -109,66 +123,71 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Confirmar contraseña:";
             // 
-            // textBox2
+            // tbContrasenna
             // 
-            this.textBox2.Location = new System.Drawing.Point(169, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 22);
-            this.textBox2.TabIndex = 7;
+            this.tbContrasenna.Location = new System.Drawing.Point(169, 67);
+            this.tbContrasenna.Name = "tbContrasenna";
+            this.tbContrasenna.Size = new System.Drawing.Size(211, 22);
+            this.tbContrasenna.TabIndex = 7;
             // 
-            // textBox3
+            // tbConfirmar
             // 
-            this.textBox3.Location = new System.Drawing.Point(169, 115);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(211, 22);
-            this.textBox3.TabIndex = 8;
+            this.tbConfirmar.Location = new System.Drawing.Point(169, 115);
+            this.tbConfirmar.Name = "tbConfirmar";
+            this.tbConfirmar.Size = new System.Drawing.Size(211, 22);
+            this.tbConfirmar.TabIndex = 8;
             // 
-            // button1
+            // btCrear
             // 
-            this.button1.Location = new System.Drawing.Point(660, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 39);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Crear";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btCrear.Location = new System.Drawing.Point(660, 27);
+            this.btCrear.Name = "btCrear";
+            this.btCrear.Size = new System.Drawing.Size(108, 39);
+            this.btCrear.TabIndex = 9;
+            this.btCrear.Text = "Crear";
+            this.btCrear.UseVisualStyleBackColor = true;
+            this.btCrear.Click += new System.EventHandler(this.btCrear_Click);
             // 
-            // button2
+            // btModificar
             // 
-            this.button2.Location = new System.Drawing.Point(660, 81);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 39);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btModificar.Location = new System.Drawing.Point(660, 81);
+            this.btModificar.Name = "btModificar";
+            this.btModificar.Size = new System.Drawing.Size(108, 39);
+            this.btModificar.TabIndex = 10;
+            this.btModificar.Text = "Modificar";
+            this.btModificar.UseVisualStyleBackColor = true;
+            this.btModificar.Click += new System.EventHandler(this.btModificar_Click);
             // 
-            // button3
+            // btEliminar
             // 
-            this.button3.Location = new System.Drawing.Point(660, 135);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 39);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btEliminar.Location = new System.Drawing.Point(660, 135);
+            this.btEliminar.Name = "btEliminar";
+            this.btEliminar.Size = new System.Drawing.Size(108, 39);
+            this.btEliminar.TabIndex = 11;
+            this.btEliminar.Text = "Eliminar";
+            this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // AdmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.btEliminar);
+            this.Controls.Add(this.btModificar);
+            this.Controls.Add(this.btCrear);
+            this.Controls.Add(this.tbConfirmar);
+            this.Controls.Add(this.tbContrasenna);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbPrivilegio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.dgvColaboradores);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbId);
             this.Name = "AdmUsuarios";
             this.Text = "AdmUsuarios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdmUsuarios_FormClosing);
+            this.Load += new System.EventHandler(this.AdmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
@@ -178,17 +197,17 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.DataGridView dgvColaboradores;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbPrivilegio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox tbContrasenna;
+        private System.Windows.Forms.TextBox tbConfirmar;
+        private System.Windows.Forms.Button btCrear;
+        private System.Windows.Forms.Button btModificar;
+        private System.Windows.Forms.Button btEliminar;
     }
 }

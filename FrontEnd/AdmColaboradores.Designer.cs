@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvColaboradores = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,24 +43,24 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtpIngreso = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvColaboradores
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 252);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 231);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvColaboradores.Location = new System.Drawing.Point(12, 252);
+            this.dgvColaboradores.Name = "dgvColaboradores";
+            this.dgvColaboradores.RowHeadersWidth = 51;
+            this.dgvColaboradores.RowTemplate.Height = 24;
+            this.dgvColaboradores.Size = new System.Drawing.Size(776, 231);
+            this.dgvColaboradores.TabIndex = 13;
             // 
             // label1
             // 
@@ -139,21 +139,21 @@
             this.textBox1.Location = new System.Drawing.Point(120, 17);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(221, 22);
-            this.textBox1.TabIndex = 9;
+            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(120, 65);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(221, 22);
-            this.textBox2.TabIndex = 10;
+            this.textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(120, 161);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(221, 22);
-            this.textBox3.TabIndex = 11;
+            this.textBox3.TabIndex = 4;
             // 
             // comboBox1
             // 
@@ -161,7 +161,7 @@
             this.comboBox1.Location = new System.Drawing.Point(120, 113);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(221, 24);
-            this.comboBox1.TabIndex = 12;
+            this.comboBox1.TabIndex = 3;
             // 
             // comboBox2
             // 
@@ -169,7 +169,7 @@
             this.comboBox2.Location = new System.Drawing.Point(491, 113);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(297, 24);
-            this.comboBox2.TabIndex = 13;
+            this.comboBox2.TabIndex = 7;
             // 
             // comboBox3
             // 
@@ -177,28 +177,30 @@
             this.comboBox3.Location = new System.Drawing.Point(491, 161);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(297, 24);
-            this.comboBox3.TabIndex = 14;
+            this.comboBox3.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // dtpNacimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(491, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(297, 22);
-            this.dateTimePicker1.TabIndex = 15;
+            this.dtpNacimiento.CustomFormat = "";
+            this.dtpNacimiento.Location = new System.Drawing.Point(491, 15);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(297, 22);
+            this.dtpNacimiento.TabIndex = 5;
             // 
-            // dateTimePicker2
+            // dtpIngreso
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(491, 63);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(297, 22);
-            this.dateTimePicker2.TabIndex = 16;
+            this.dtpIngreso.CustomFormat = "";
+            this.dtpIngreso.Location = new System.Drawing.Point(491, 63);
+            this.dtpIngreso.Name = "dtpIngreso";
+            this.dtpIngreso.Size = new System.Drawing.Size(297, 22);
+            this.dtpIngreso.TabIndex = 6;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(29, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 42);
-            this.button1.TabIndex = 17;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Crear";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -207,7 +209,7 @@
             this.button2.Location = new System.Drawing.Point(232, 204);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 42);
-            this.button2.TabIndex = 18;
+            this.button2.TabIndex = 10;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -216,7 +218,7 @@
             this.button3.Location = new System.Drawing.Point(435, 204);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 42);
-            this.button3.TabIndex = 19;
+            this.button3.TabIndex = 11;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -225,7 +227,7 @@
             this.button4.Location = new System.Drawing.Point(638, 204);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(127, 42);
-            this.button4.TabIndex = 20;
+            this.button4.TabIndex = 12;
             this.button4.Text = "Exportar";
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -238,8 +240,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpIngreso);
+            this.Controls.Add(this.dtpNacimiento);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -254,10 +256,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvColaboradores);
             this.Name = "AdmColaboradores";
             this.Text = "AdmColaboradores";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdmColaboradores_FormClosing);
+            this.Load += new System.EventHandler(this.AdmColaboradores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,7 +269,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvColaboradores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -280,8 +284,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
+        private System.Windows.Forms.DateTimePicker dtpIngreso;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
