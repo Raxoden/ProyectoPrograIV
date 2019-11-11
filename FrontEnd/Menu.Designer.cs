@@ -31,6 +31,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbUsuario = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
+            this.lbArea = new System.Windows.Forms.Label();
+            this.lbPuesto = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +47,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1080, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(605, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,14 +63,55 @@
             // colaboradoresToolStripMenuItem
             // 
             this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
-            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
             this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
+            this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
+            // 
+            // lbUsuario
+            // 
+            this.lbUsuario.AutoSize = true;
+            this.lbUsuario.Location = new System.Drawing.Point(12, 47);
+            this.lbUsuario.Name = "lbUsuario";
+            this.lbUsuario.Size = new System.Drawing.Size(61, 17);
+            this.lbUsuario.TabIndex = 2;
+            this.lbUsuario.Text = "Usuario:";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Location = new System.Drawing.Point(12, 94);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(25, 17);
+            this.lbID.TabIndex = 3;
+            this.lbID.Text = "ID:";
+            // 
+            // lbArea
+            // 
+            this.lbArea.AutoSize = true;
+            this.lbArea.Location = new System.Drawing.Point(12, 141);
+            this.lbArea.Name = "lbArea";
+            this.lbArea.Size = new System.Drawing.Size(42, 17);
+            this.lbArea.TabIndex = 4;
+            this.lbArea.Text = "Area:";
+            // 
+            // lbPuesto
+            // 
+            this.lbPuesto.AutoSize = true;
+            this.lbPuesto.Location = new System.Drawing.Point(12, 188);
+            this.lbPuesto.Name = "lbPuesto";
+            this.lbPuesto.Size = new System.Drawing.Size(56, 17);
+            this.lbPuesto.TabIndex = 5;
+            this.lbPuesto.Text = "Puesto:";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 453);
+            this.ClientSize = new System.Drawing.Size(605, 241);
+            this.Controls.Add(this.lbPuesto);
+            this.Controls.Add(this.lbArea);
+            this.Controls.Add(this.lbID);
+            this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -84,5 +129,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
+        private System.Windows.Forms.Label lbUsuario;
+        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.Label lbArea;
+        private System.Windows.Forms.Label lbPuesto;
     }
 }

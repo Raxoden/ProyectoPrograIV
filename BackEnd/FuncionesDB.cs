@@ -37,37 +37,66 @@ namespace BackEnd
             }
         }
 
+        public Colaborador Busqueda(int ID)
+        {
+            try
+            {
+
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    var query = (from C in PE.Colaborador
+                                 join A in PE.Area on C.ID_Area equals A.ID_Area
+                                 join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                                 where C.ID_Colaborador == ID
+                                 select new Colaborador
+                                 {
+                                     ID_Colaborador = C.ID_Colaborador,
+                                     Nombre = C.Nombre,
+                                     Genero = C.Genero,
+                                     Edad = C.Edad,
+                                     Fecha_Nacimiento = C.Fecha_Nacimiento.ToString(),
+                                     Fecha_Ingreso = C.Fecha_Ingreso.ToString(),
+                                     Desc_Puesto = P.Descripcion,
+                                     Desc_Area = A.Descripcion
+                                 }).ToList().FirstOrDefault();
+                    return query;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
         public List<Colaborador> Consulta()
         {
+            try
             {
-                try
-                {
 
-                    using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
-                    {
-                        var query = (from C in PE.Colaborador
-                                    join A in PE.Area on C.ID_Area equals A.ID_Area
-                                    join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
-                                    select new Colaborador
-                                    {
-                                        ID_Colaborador = C.ID_Colaborador,
-                                        Nombre = C.Nombre,
-                                        Genero = C.Genero,
-                                        Edad = C.Edad,
-                                        Fecha_Nacimiento = C.Fecha_Nacimiento.ToString(),
-                                        Fecha_Ingreso = C.Fecha_Ingreso.ToString(),
-                                        Desc_Puesto = P.Descripcion,
-                                        Desc_Area = A.Descripcion
-                                    }).ToList();
-                        return query;
-                    }
-                }
-                catch (Exception ex)
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
                 {
-                    Console.WriteLine(ex.Message);
-                    return null;
+                    var query = (from C in PE.Colaborador
+                                join A in PE.Area on C.ID_Area equals A.ID_Area
+                                join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                                select new Colaborador
+                                {
+                                    ID_Colaborador = C.ID_Colaborador,
+                                    Nombre = C.Nombre,
+                                    Genero = C.Genero,
+                                    Edad = C.Edad,
+                                    Fecha_Nacimiento = C.Fecha_Nacimiento.ToString(),
+                                    Fecha_Ingreso = C.Fecha_Ingreso.ToString(),
+                                    Desc_Puesto = P.Descripcion,
+                                    Desc_Area = A.Descripcion
+                                }).ToList();
+                    return query;
                 }
-
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
