@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.tbContrasenna = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -37,53 +38,40 @@
             // 
             // tbUsuario
             // 
-            this.tbUsuario.Location = new System.Drawing.Point(41, 73);
+            resources.ApplyResources(this.tbUsuario, "tbUsuario");
             this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(240, 22);
-            this.tbUsuario.TabIndex = 0;
             this.tbUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUsuario_KeyPress);
             // 
             // tbContrasenna
             // 
-            this.tbContrasenna.Location = new System.Drawing.Point(41, 153);
+            resources.ApplyResources(this.tbContrasenna, "tbContrasenna");
             this.tbContrasenna.Name = "tbContrasenna";
-            this.tbContrasenna.PasswordChar = '*';
-            this.tbContrasenna.Size = new System.Drawing.Size(240, 22);
-            this.tbContrasenna.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(68, 212);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 59);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 32);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuario:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 121);
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Contraseña:";
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 377);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::FrontEnd.Properties.Resources.Login;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -93,8 +81,6 @@
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

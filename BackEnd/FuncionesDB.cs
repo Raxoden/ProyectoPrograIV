@@ -172,7 +172,39 @@ namespace BackEnd
                 return null;
             }
         }
-        
+        public List<String> BusquedaArea(Usuario us)
+        {
+            using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities()) {
+                if (us.Privilegios)
+                {
+                    var query = (from C in PE.Colaborador
+                                join A in PE.Area on C.ID_Area equals A.ID_Area
+                                select A.Descripcion).ToList();
+                    return query;
+                } else
+                {
+                    var query = (from C in PE.Colaborador
+                                 join A in PE.Area on C.ID_Area equals A.ID_Area
+                                 where C.ID_Colaborador == us.ID_Colaborador
+                                 select A.Descripcion).ToList();
+                    return query;
+                }
+            }
+        }
+        public List<String> BusquedaPuesto(string DescArea)
+        {
+            using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+            {
+                var query = (from C in PE.Colaborador
+                             join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                             join A in PE.Area on C.ID_Area equals A.ID_Area
+                             where A.Descripcion == DescArea
+                             select P.Descripcion).ToList();
+                return query;
+            }
+        }
+
+
         #region Usuarios
         public bool RegistrarUsuario(int ID, string Contrasenna, bool Privilegio)
         {

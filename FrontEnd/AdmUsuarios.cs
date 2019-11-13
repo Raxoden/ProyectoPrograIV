@@ -38,10 +38,10 @@ namespace FrontEnd
             tbId.Text = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
             if (Convert.ToBoolean(dgvUsuarios.CurrentRow.Cells[4].Value))
             {
-                rbPrivilegio.Checked = true;
+                cbPrivilegio.Checked = true;
             } else
             {
-                rbPrivilegio.Checked = false;
+                cbPrivilegio.Checked = false;
             }
         }
 
@@ -81,7 +81,7 @@ namespace FrontEnd
                 }
                 else
                 {
-                    if (fdb.RegistrarUsuario(Convert.ToInt32(tbId.Text), tbContrasenna.Text, rbPrivilegio.Checked))
+                    if (fdb.RegistrarUsuario(Convert.ToInt32(tbId.Text), tbContrasenna.Text, cbPrivilegio.Checked))
                     {
                         MessageBox.Show("Se registro correctamente.");
                         dgvUsuarios.DataSource = fdb.ConsultaUsuarios();
@@ -99,7 +99,7 @@ namespace FrontEnd
         {
             if (ValidarCampos())
             {
-                if (fdb.ActualizarUsuario(Convert.ToInt32(tbId.Text), tbContrasenna.Text, rbPrivilegio.Checked))
+                if (fdb.ActualizarUsuario(Convert.ToInt32(tbId.Text), tbContrasenna.Text, cbPrivilegio.Checked))
                 {
                     MessageBox.Show("Se modifico correctamente.");
                     dgvUsuarios.DataSource = fdb.ConsultaUsuarios();

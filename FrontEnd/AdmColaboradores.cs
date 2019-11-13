@@ -17,21 +17,35 @@ namespace FrontEnd
         Usuario Usuario;
         public AdmColaboradores(Usuario Usuario)
         {
-            this.Usuario = Usuario;
             InitializeComponent();
-        }
+            this.Usuario = Usuario;
+            cbArea.DataSource = fdb.BusquedaArea(this.Usuario);
 
+        }
+        
         private void AdmColaboradores_Load(object sender, EventArgs e)
         {
             dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
-            String.Format("yyyy/MM/dd", dtpIngreso);
-            String.Format("yyyy/MM/dd", dtpNacimiento);
+            dtpIngreso.MaxDate = System.DateTime.Now;
+            dtpNacimiento.MaxDate = System.DateTime.Now.AddYears(-18);
+            dtpIngreso.MinDate = System.DateTime.Now.AddYears(-100);
+            dtpNacimiento.MinDate = System.DateTime.Now.AddYears(-100);
         }
 
         private void AdmColaboradores_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             this.Visible = false;
+        }
+
+        private void btCrear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbPuesto.DataSource = fdb.BusquedaPuesto(cbArea.Text);
         }
     }
 }
