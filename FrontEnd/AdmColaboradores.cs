@@ -55,6 +55,7 @@ namespace FrontEnd
             {
                 if (fdb.RegistrarColaborador(Convert.ToInt32(tbID.Text), tbNombre.Text, cbGenero.Text, Convert.ToInt32(tbEdad.Text), dtpNacimiento.Value, dtpIngreso.Value, cbPuesto.Text, cbArea.Text))
                 {
+                    fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbID.Text), 1);
                     dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
                     MessageBox.Show("El colaborador se registro exitosamente.");
                 } else
@@ -129,6 +130,7 @@ namespace FrontEnd
             {
                 if (fdb.ActualizarColaborador(Convert.ToInt32(tbID.Text), tbNombre.Text, cbGenero.Text, Convert.ToInt32(tbEdad.Text), dtpNacimiento.Value, dtpIngreso.Value, cbPuesto.Text, cbArea.Text))
                 {
+                    fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbID.Text), 2);
                     dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
                     MessageBox.Show("El colaborador se actualizo exitosamente.");
                 }
@@ -153,6 +155,7 @@ namespace FrontEnd
             {
                 if (fdb.EliminarColaborador(Convert.ToInt32(tbID.Text)))
                 {
+                    fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbID.Text), 3);
                     MessageBox.Show("El colaborador se elimino correctamente.");
                     dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
                 }
@@ -161,6 +164,17 @@ namespace FrontEnd
                     MessageBox.Show("No se pudo eliminar al colaborador.");
                 }
             }
+        }
+        private void dgvColaboradores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbID.Text = dgvColaboradores.CurrentRow.Cells[0].Value.ToString();
+            tbNombre.Text = dgvColaboradores.CurrentRow.Cells[1].Value.ToString();
+            cbGenero.Text = dgvColaboradores.CurrentRow.Cells[2].Value.ToString();
+            tbEdad.Text = dgvColaboradores.CurrentRow.Cells[3].Value.ToString();
+            dtpNacimiento.Value = Convert.ToDateTime(dgvColaboradores.CurrentRow.Cells[4].Value);
+            dtpIngreso.Value = Convert.ToDateTime(dgvColaboradores.CurrentRow.Cells[5].Value);
+            cbArea.Text = dgvColaboradores.CurrentRow.Cells[7].Value.ToString();
+            cbPuesto.Text = dgvColaboradores.CurrentRow.Cells[6].Value.ToString();
         }
     }
 }

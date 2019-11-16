@@ -56,7 +56,13 @@
     <Compile Include="Area.cs">
       <DependentUpon>ModeloPlanilla.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bitacora.cs">
+      <DependentUpon>ModeloPlanilla.tt</DependentUpon>
+    </Compile>
     <Compile Include="Colaborador.cs">
+      <DependentUpon>ModeloPlanilla.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Evento.cs">
       <DependentUpon>ModeloPlanilla.tt</DependentUpon>
     </Compile>
     <Compile Include="ModeloPlanilla.Context.cs">
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Puesto.cs">
+      <DependentUpon>ModeloPlanilla.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte.cs">
       <DependentUpon>ModeloPlanilla.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">

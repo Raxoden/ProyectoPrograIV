@@ -12,6 +12,16 @@
           <Property Name="ID_Area" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="ID_Bitacora" />
+          </Key>
+          <Property Name="ID_Bitacora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Hora_Entrada" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Hora_Salida" Type="time" Precision="7" Nullable="false" />
+          <Property Name="ID_Usuario" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Colaborador">
           <Key>
             <PropertyRef Name="ID_Colaborador" />
@@ -25,12 +35,30 @@
           <Property Name="ID_Puesto" Type="int" Nullable="false" />
           <Property Name="ID_Area" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Evento">
+          <Key>
+            <PropertyRef Name="ID_Evento" />
+          </Key>
+          <Property Name="ID_Evento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Puesto">
           <Key>
             <PropertyRef Name="ID_Puesto" />
           </Key>
           <Property Name="ID_Puesto" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reporte">
+          <Key>
+            <PropertyRef Name="ID_Reporte" />
+          </Key>
+          <Property Name="ID_Reporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="ID_Evento" Type="int" Nullable="false" />
+          <Property Name="ID_Usuario" Type="int" Nullable="false" />
+          <Property Name="ID_Colaborador" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -41,7 +69,19 @@
           <Property Name="Contrasenna" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Privilegios" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Colaborad__ID_Ar__6383C8BA">
+        <Association Name="FK__Bitacora__ID_Usu__1EA48E88">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Bitacora">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Colaborad__ID_Ar__14270015">
           <End Role="Area" Type="Self.Area" Multiplicity="1" />
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
           <ReferentialConstraint>
@@ -53,7 +93,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Colaborad__ID_Pu__628FA481">
+        <Association Name="FK__Colaborad__ID_Pu__1332DBDC">
           <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
           <ReferentialConstraint>
@@ -65,7 +105,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__ID_Cola__66603565">
+        <Association Name="FK__Reporte__ID_Cola__1BC821DD">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="ID_Colaborador" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="ID_Colaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reporte__ID_Even__19DFD96B">
+          <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Evento">
+              <PropertyRef Name="ID_Evento" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="ID_Evento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reporte__ID_Usua__1AD3FDA4">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__ID_Cola__17036CC0">
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -79,18 +155,37 @@
         </Association>
         <EntityContainer Name="SistemaPlanillaModelStoreContainer">
           <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Colaborador" EntityType="Self.Colaborador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Puesto" EntityType="Self.Puesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reporte" EntityType="Self.Reporte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Colaborad__ID_Ar__6383C8BA" Association="Self.FK__Colaborad__ID_Ar__6383C8BA">
+          <AssociationSet Name="FK__Bitacora__ID_Usu__1EA48E88" Association="Self.FK__Bitacora__ID_Usu__1EA48E88">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Colaborad__ID_Ar__14270015" Association="Self.FK__Colaborad__ID_Ar__14270015">
             <End Role="Area" EntitySet="Area" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Colaborad__ID_Pu__628FA481" Association="Self.FK__Colaborad__ID_Pu__628FA481">
+          <AssociationSet Name="FK__Colaborad__ID_Pu__1332DBDC" Association="Self.FK__Colaborad__ID_Pu__1332DBDC">
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__ID_Cola__66603565" Association="Self.FK__Usuario__ID_Cola__66603565">
+          <AssociationSet Name="FK__Reporte__ID_Cola__1BC821DD" Association="Self.FK__Reporte__ID_Cola__1BC821DD">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reporte__ID_Even__19DFD96B" Association="Self.FK__Reporte__ID_Even__19DFD96B">
+            <End Role="Evento" EntitySet="Evento" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reporte__ID_Usua__1AD3FDA4" Association="Self.FK__Reporte__ID_Usua__1AD3FDA4">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__ID_Cola__17036CC0" Association="Self.FK__Usuario__ID_Cola__17036CC0">
             <End Role="Colaborador" EntitySet="Colaborador" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -106,7 +201,18 @@
           </Key>
           <Property Name="ID_Area" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Colaborad__ID_Ar__6383C8BA" FromRole="Area" ToRole="Colaborador" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Colaborad__ID_Ar__14270015" FromRole="Area" ToRole="Colaborador" />
+        </EntityType>
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="ID_Bitacora" />
+          </Key>
+          <Property Name="ID_Bitacora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora_Entrada" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Hora_Salida" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Bitacora__ID_Usu__1EA48E88" FromRole="Bitacora" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Colaborador">
           <Key>
@@ -120,9 +226,18 @@
           <Property Name="Fecha_Ingreso" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ID_Puesto" Type="Int32" Nullable="false" />
           <Property Name="ID_Area" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Area" Relationship="Self.FK__Colaborad__ID_Ar__6383C8BA" FromRole="Colaborador" ToRole="Area" />
-          <NavigationProperty Name="Puesto" Relationship="Self.FK__Colaborad__ID_Pu__628FA481" FromRole="Colaborador" ToRole="Puesto" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__ID_Cola__66603565" FromRole="Colaborador" ToRole="Usuario" />
+          <NavigationProperty Name="Area" Relationship="Self.FK__Colaborad__ID_Ar__14270015" FromRole="Colaborador" ToRole="Area" />
+          <NavigationProperty Name="Puesto" Relationship="Self.FK__Colaborad__ID_Pu__1332DBDC" FromRole="Colaborador" ToRole="Puesto" />
+          <NavigationProperty Name="Reporte" Relationship="Self.FK__Reporte__ID_Cola__1BC821DD" FromRole="Colaborador" ToRole="Reporte" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__ID_Cola__17036CC0" FromRole="Colaborador" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Evento">
+          <Key>
+            <PropertyRef Name="ID_Evento" />
+          </Key>
+          <Property Name="ID_Evento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Reporte" Relationship="Self.FK__Reporte__ID_Even__19DFD96B" FromRole="Evento" ToRole="Reporte" />
         </EntityType>
         <EntityType Name="Puesto">
           <Key>
@@ -130,7 +245,21 @@
           </Key>
           <Property Name="ID_Puesto" Type="Int32" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Colaborad__ID_Pu__628FA481" FromRole="Puesto" ToRole="Colaborador" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Colaborad__ID_Pu__1332DBDC" FromRole="Puesto" ToRole="Colaborador" />
+        </EntityType>
+        <EntityType Name="Reporte">
+          <Key>
+            <PropertyRef Name="ID_Reporte" />
+          </Key>
+          <Property Name="ID_Reporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="ID_Evento" Type="Int32" Nullable="false" />
+          <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
+          <Property Name="ID_Colaborador" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Reporte__ID_Cola__1BC821DD" FromRole="Reporte" ToRole="Colaborador" />
+          <NavigationProperty Name="Evento" Relationship="Self.FK__Reporte__ID_Even__19DFD96B" FromRole="Reporte" ToRole="Evento" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Reporte__ID_Usua__1AD3FDA4" FromRole="Reporte" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -140,9 +269,11 @@
           <Property Name="ID_Colaborador" Type="Int32" Nullable="false" />
           <Property Name="Contrasenna" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Privilegios" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Usuario__ID_Cola__66603565" FromRole="Usuario" ToRole="Colaborador" />
+          <NavigationProperty Name="Bitacora" Relationship="Self.FK__Bitacora__ID_Usu__1EA48E88" FromRole="Usuario" ToRole="Bitacora" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Usuario__ID_Cola__17036CC0" FromRole="Usuario" ToRole="Colaborador" />
+          <NavigationProperty Name="Reporte" Relationship="Self.FK__Reporte__ID_Usua__1AD3FDA4" FromRole="Usuario" ToRole="Reporte" />
         </EntityType>
-        <Association Name="FK__Colaborad__ID_Ar__6383C8BA">
+        <Association Name="FK__Colaborad__ID_Ar__14270015">
           <End Role="Area" Type="Self.Area" Multiplicity="1" />
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
           <ReferentialConstraint>
@@ -154,7 +285,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Colaborad__ID_Pu__628FA481">
+        <Association Name="FK__Bitacora__ID_Usu__1EA48E88">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Bitacora">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Colaborad__ID_Pu__1332DBDC">
           <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
           <ReferentialConstraint>
@@ -166,7 +309,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__ID_Cola__66603565">
+        <Association Name="FK__Reporte__ID_Cola__1BC821DD">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="ID_Colaborador" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="ID_Colaborador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__ID_Cola__17036CC0">
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -178,22 +333,65 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SistemaPlanillaEntities1" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK__Reporte__ID_Even__19DFD96B">
+          <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Evento">
+              <PropertyRef Name="ID_Evento" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="ID_Evento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reporte__ID_Usua__1AD3FDA4">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="ID_Usuario" />
+            </Principal>
+            <Dependent Role="Reporte">
+              <PropertyRef Name="ID_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SistemaPlanillaEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Area" EntityType="Self.Area" />
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" />
           <EntitySet Name="Colaborador" EntityType="Self.Colaborador" />
+          <EntitySet Name="Evento" EntityType="Self.Evento" />
           <EntitySet Name="Puesto" EntityType="Self.Puesto" />
+          <EntitySet Name="Reporte" EntityType="Self.Reporte" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <AssociationSet Name="FK__Colaborad__ID_Ar__6383C8BA" Association="Self.FK__Colaborad__ID_Ar__6383C8BA">
+          <AssociationSet Name="FK__Colaborad__ID_Ar__14270015" Association="Self.FK__Colaborad__ID_Ar__14270015">
             <End Role="Area" EntitySet="Area" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Colaborad__ID_Pu__628FA481" Association="Self.FK__Colaborad__ID_Pu__628FA481">
+          <AssociationSet Name="FK__Bitacora__ID_Usu__1EA48E88" Association="Self.FK__Bitacora__ID_Usu__1EA48E88">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Colaborad__ID_Pu__1332DBDC" Association="Self.FK__Colaborad__ID_Pu__1332DBDC">
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__ID_Cola__66603565" Association="Self.FK__Usuario__ID_Cola__66603565">
+          <AssociationSet Name="FK__Reporte__ID_Cola__1BC821DD" Association="Self.FK__Reporte__ID_Cola__1BC821DD">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__ID_Cola__17036CC0" Association="Self.FK__Usuario__ID_Cola__17036CC0">
             <End Role="Colaborador" EntitySet="Colaborador" />
             <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reporte__ID_Even__19DFD96B" Association="Self.FK__Reporte__ID_Even__19DFD96B">
+            <End Role="Evento" EntitySet="Evento" />
+            <End Role="Reporte" EntitySet="Reporte" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reporte__ID_Usua__1AD3FDA4" Association="Self.FK__Reporte__ID_Usua__1AD3FDA4">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Reporte" EntitySet="Reporte" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -201,12 +399,23 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SistemaPlanillaModelStoreContainer" CdmEntityContainer="SistemaPlanillaEntities1">
+        <EntityContainerMapping StorageEntityContainer="SistemaPlanillaModelStoreContainer" CdmEntityContainer="SistemaPlanillaEntities">
           <EntitySetMapping Name="Area">
             <EntityTypeMapping TypeName="SistemaPlanillaModel.Area">
               <MappingFragment StoreEntitySet="Area">
                 <ScalarProperty Name="ID_Area" ColumnName="ID_Area" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bitacora">
+            <EntityTypeMapping TypeName="SistemaPlanillaModel.Bitacora">
+              <MappingFragment StoreEntitySet="Bitacora">
+                <ScalarProperty Name="ID_Bitacora" ColumnName="ID_Bitacora" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora_Entrada" ColumnName="Hora_Entrada" />
+                <ScalarProperty Name="Hora_Salida" ColumnName="Hora_Salida" />
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -224,11 +433,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Evento">
+            <EntityTypeMapping TypeName="SistemaPlanillaModel.Evento">
+              <MappingFragment StoreEntitySet="Evento">
+                <ScalarProperty Name="ID_Evento" ColumnName="ID_Evento" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Puesto">
             <EntityTypeMapping TypeName="SistemaPlanillaModel.Puesto">
               <MappingFragment StoreEntitySet="Puesto">
                 <ScalarProperty Name="ID_Puesto" ColumnName="ID_Puesto" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reporte">
+            <EntityTypeMapping TypeName="SistemaPlanillaModel.Reporte">
+              <MappingFragment StoreEntitySet="Reporte">
+                <ScalarProperty Name="ID_Reporte" ColumnName="ID_Reporte" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="ID_Evento" ColumnName="ID_Evento" />
+                <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+                <ScalarProperty Name="ID_Colaborador" ColumnName="ID_Colaborador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

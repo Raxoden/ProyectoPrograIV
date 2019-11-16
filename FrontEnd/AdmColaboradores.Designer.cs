@@ -49,7 +49,6 @@
             this.btCrear = new System.Windows.Forms.Button();
             this.btModificar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
-            this.btExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,8 +56,11 @@
             // 
             this.dgvColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dgvColaboradores, "dgvColaboradores");
+            this.dgvColaboradores.MultiSelect = false;
             this.dgvColaboradores.Name = "dgvColaboradores";
+            this.dgvColaboradores.ReadOnly = true;
             this.dgvColaboradores.RowTemplate.Height = 24;
+            this.dgvColaboradores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColaboradores_CellClick);
             // 
             // label1
             // 
@@ -181,18 +183,11 @@
             this.btEliminar.UseVisualStyleBackColor = true;
             this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
-            // btExportar
-            // 
-            resources.ApplyResources(this.btExportar, "btExportar");
-            this.btExportar.Name = "btExportar";
-            this.btExportar.UseVisualStyleBackColor = true;
-            // 
             // AdmColaboradores
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::FrontEnd.Properties.Resources.Login;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.btExportar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.btModificar);
             this.Controls.Add(this.btCrear);
@@ -247,6 +242,5 @@
         private System.Windows.Forms.Button btCrear;
         private System.Windows.Forms.Button btModificar;
         private System.Windows.Forms.Button btEliminar;
-        private System.Windows.Forms.Button btExportar;
     }
 }

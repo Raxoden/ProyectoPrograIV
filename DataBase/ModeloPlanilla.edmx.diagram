@@ -4,14 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2568fd27177043feb6f44247a8c71305" Name="Diagram1">
-        <EntityTypeShape EntityType="SistemaPlanillaModel.Area" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaPlanillaModel.Colaborador" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaPlanillaModel.Puesto" Width="1.5" PointX="0.5" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaPlanillaModel.Usuario" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
-        <AssociationConnector Association="SistemaPlanillaModel.FK__Colaborad__ID_Ar__6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="SistemaPlanillaModel.FK__Colaborad__ID_Pu__628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="SistemaPlanillaModel.FK__Usuario__ID_Cola__66603565" ManuallyRouted="false" />
+      <Diagram DiagramId="7163b32452474ebb86d323b8d276105a" Name="Diagram1">
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Area" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Bitacora" Width="1.5" PointX="13.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Colaborador" Width="1.5" PointX="4.375" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Evento" Width="1.5" PointX="10.875" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Puesto" Width="1.5" PointX="0.625" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Reporte" Width="1.5" PointX="7.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Usuario" Width="1.5" PointX="11" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="SistemaPlanillaModel.FK__Colaborad__ID_Ar__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaPlanillaModel.FK__Bitacora__ID_Usu__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaPlanillaModel.FK__Colaborad__ID_Pu__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaPlanillaModel.FK__Reporte__ID_Cola__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaPlanillaModel.FK__Usuario__ID_Cola__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaPlanillaModel.FK__Reporte__ID_Even__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="SistemaPlanillaModel.FK__Reporte__ID_Usua__1AD3FDA4" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

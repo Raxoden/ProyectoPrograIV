@@ -67,6 +67,7 @@ namespace FrontEnd
         {
             au.Dispose();
             ac.Dispose();
+            fdb.registrarSalida(Usuario.ID_Usuario);
             Application.Exit();
         }
     }

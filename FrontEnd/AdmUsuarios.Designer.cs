@@ -41,6 +41,7 @@
             this.btModificar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
             this.cbPrivilegio = new System.Windows.Forms.CheckBox();
+            this.btExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -135,11 +136,19 @@
             this.cbPrivilegio.Name = "cbPrivilegio";
             this.cbPrivilegio.UseVisualStyleBackColor = false;
             // 
+            // btExportar
+            // 
+            resources.ApplyResources(this.btExportar, "btExportar");
+            this.btExportar.Name = "btExportar";
+            this.btExportar.UseVisualStyleBackColor = true;
+            this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
+            // 
             // AdmUsuarios
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FrontEnd.Properties.Resources.Login;
+            this.Controls.Add(this.btExportar);
             this.Controls.Add(this.cbPrivilegio);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.btModificar);
@@ -179,5 +188,6 @@
         private System.Windows.Forms.Button btModificar;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.CheckBox cbPrivilegio;
+        private System.Windows.Forms.Button btExportar;
     }
 }

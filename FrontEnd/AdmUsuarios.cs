@@ -29,7 +29,7 @@ namespace FrontEnd
 
         private void AdmUsuarios_Load(object sender, EventArgs e)
         {
-            dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
+            dgvColaboradores.DataSource = fdb.ConsultaGerentes(Usuario);
             dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
         }
 
@@ -87,6 +87,7 @@ namespace FrontEnd
                 {
                     if (fdb.RegistrarUsuario(Convert.ToInt32(tbId.Text),tbContrasenna.Text,cbPrivilegio.Checked))
                     {
+                        fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbId.Text), 4);
                         MessageBox.Show("Se registro exitosamente.");
                         dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
 
@@ -104,6 +105,7 @@ namespace FrontEnd
             {
                 if (fdb.ActualizarUsuario(Convert.ToInt32(tbId.Text), tbContrasenna.Text, cbPrivilegio.Checked))
                 {
+                    fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbId.Text), 5);
                     MessageBox.Show("Se modifico correctamente.");
                     dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
                 }
@@ -122,6 +124,7 @@ namespace FrontEnd
             }else {
                 if (fdb.EliminarUsuario(Convert.ToInt32(tbId.Text)))
                 {
+                    fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbId.Text), 6);
                     MessageBox.Show("Se elimino correctamente.");
                     dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
                 } else
@@ -146,6 +149,12 @@ namespace FrontEnd
             {
                 e.Handled = true;
             }
+        }
+
+        private void btExportar_Click(object sender, EventArgs e)
+        {
+            fdb.registrarEvento(Usuario.ID_Usuario, 0, 7);
+            fdb.ExportarExcel();
         }
     }
 }

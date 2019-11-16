@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbId.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="dgvColaboradores.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 204</value>
@@ -162,7 +162,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvColaboradores.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="dgvUsuarios.Location" type="System.Drawing.Point, System.Drawing">
     <value>418, 204</value>
@@ -186,7 +186,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvUsuarios.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -213,7 +213,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -240,7 +240,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -267,7 +267,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tbContrasenna.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 67</value>
@@ -288,7 +288,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbContrasenna.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="tbConfirmar.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 115</value>
@@ -309,10 +309,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbConfirmar.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btCrear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>660, 27</value>
+    <value>521, 34</value>
   </data>
   <data name="btCrear.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 39</value>
@@ -333,10 +333,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btCrear.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btModificar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>660, 81</value>
+    <value>661, 34</value>
   </data>
   <data name="btModificar.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 39</value>
@@ -357,10 +357,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btModificar.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btEliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>660, 135</value>
+    <value>661, 110</value>
   </data>
   <data name="btEliminar.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 39</value>
@@ -381,7 +381,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btEliminar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="cbPrivilegio.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -408,6 +408,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbPrivilegio.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btExportar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btExportar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>521, 110</value>
+  </data>
+  <data name="btExportar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 39</value>
+  </data>
+  <data name="btExportar.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btExportar.Text" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="&gt;&gt;btExportar.Name" xml:space="preserve">
+    <value>btExportar</value>
+  </data>
+  <data name="&gt;&gt;btExportar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btExportar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btExportar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -419,7 +447,6 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>

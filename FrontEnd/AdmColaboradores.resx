@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvColaboradores.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>19</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -168,7 +168,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -195,7 +195,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -222,7 +222,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -249,7 +249,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -276,7 +276,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -303,7 +303,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -330,7 +330,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -357,7 +357,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="tbID.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 17</value>
@@ -378,7 +378,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbID.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="tbNombre.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 65</value>
@@ -399,7 +399,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbNombre.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="tbEdad.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 161</value>
@@ -420,7 +420,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tbEdad.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="cbGenero.Location" type="System.Drawing.Point, System.Drawing">
     <value>120, 113</value>
@@ -441,7 +441,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbGenero.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="cbArea.Location" type="System.Drawing.Point, System.Drawing">
     <value>491, 113</value>
@@ -465,7 +465,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbArea.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="cbPuesto.Location" type="System.Drawing.Point, System.Drawing">
     <value>491, 161</value>
@@ -489,7 +489,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbPuesto.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="dtpNacimiento.CustomFormat" xml:space="preserve">
     <value />
@@ -513,7 +513,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtpNacimiento.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="dtpIngreso.CustomFormat" xml:space="preserve">
     <value />
@@ -537,10 +537,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtpIngreso.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btCrear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 204</value>
+    <value>159, 200</value>
   </data>
   <data name="btCrear.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 46</value>
@@ -561,10 +561,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btCrear.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btModificar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 204</value>
+    <value>362, 200</value>
   </data>
   <data name="btModificar.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 46</value>
@@ -585,10 +585,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btModificar.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btEliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>435, 204</value>
+    <value>565, 200</value>
   </data>
   <data name="btEliminar.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 46</value>
@@ -609,30 +609,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btEliminar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btExportar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>638, 204</value>
-  </data>
-  <data name="btExportar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 46</value>
-  </data>
-  <data name="btExportar.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="btExportar.Text" xml:space="preserve">
-    <value>Exportar</value>
-  </data>
-  <data name="&gt;&gt;btExportar.Name" xml:space="preserve">
-    <value>btExportar</value>
-  </data>
-  <data name="&gt;&gt;btExportar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btExportar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btExportar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

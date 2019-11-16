@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataBase;
+using SpreadsheetLight;
 
 namespace BackEnd
 {
@@ -18,10 +19,11 @@ namespace BackEnd
                 {
                     var query = (from U in PE.Usuario 
                                 where U.ID_Colaborador == us & 
-                                U.Contrasenna == pa select U.ID_Colaborador).ToList();
+                                U.Contrasenna == pa select U.ID_Usuario).ToList().FirstOrDefault();
                     Console.WriteLine();
-                    if (query.FirstOrDefault() > 0)
+                    if (query > 0)
                     {
+                        registrarEntrada(Convert.ToInt32(query));
                         return true;
                     }
                     else
@@ -80,12 +82,43 @@ namespace BackEnd
                                  where C.ID_Colaborador == ID
                                  select new Usuario
                                  {
+                                     ID_Usuario = U.ID_Usuario,
                                      ID_Colaborador = C.ID_Colaborador,
                                      Nombre = C.Nombre,
                                      Desc_Puesto = P.Descripcion,
                                      Desc_Area = A.Descripcion,
                                      Privilegios = U.Privilegios
                                  }).ToList().FirstOrDefault();
+                    return query;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+        public List<Colaborador> ConsultaGerentes(Usuario us)
+        {
+            try
+            {
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    var query = (from C in PE.Colaborador
+                                 join A in PE.Area on C.ID_Area equals A.ID_Area
+                                 join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                                 where P.Descripcion == "Gerente" || A.Descripcion.Contains("RECURSOS HUMANOS")
+                                 select new Colaborador
+                                 {
+                                     ID_Colaborador = C.ID_Colaborador,
+                                     Nombre = C.Nombre,
+                                     Genero = C.Genero,
+                                     Edad = C.Edad,
+                                     Fecha_Nacimiento = C.Fecha_Nacimiento.ToString(),
+                                     Fecha_Ingreso = C.Fecha_Ingreso.ToString(),
+                                     Desc_Puesto = P.Descripcion,
+                                     Desc_Area = A.Descripcion
+                                 }).ToList();
                     return query;
                 }
             }
@@ -106,7 +139,6 @@ namespace BackEnd
                         var query = (from C in PE.Colaborador
                                      join A in PE.Area on C.ID_Area equals A.ID_Area
                                      join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
-                                     where P.Descripcion == "Gerente" || A.Descripcion.Contains("RECURSOS HUMANOS")
                                      select new Colaborador
                                      {
                                          ID_Colaborador = C.ID_Colaborador,
@@ -360,6 +392,176 @@ namespace BackEnd
                         return false;
                     }
                 }
+            }
+        }
+        #endregion
+
+        #region Excel
+        public bool ExportarExcel()
+        {
+            SLDocument slDocumento = new SLDocument();
+            SLStyle slEstilo = new SLStyle();
+            int indxFila = 2;
+            slEstilo.Font.FontSize = 12;
+            slEstilo.Font.Bold = true;
+            using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+            {
+                var col = (from C in PE.Colaborador
+                           select new expColaborador
+                           {
+                               ID_Colaborador = C.ID_Colaborador,
+                               Nombre = C.Nombre,
+                               Genero = C.Genero,
+                               Edad = C.Edad,
+                               Fecha_Nacimiento = C.Fecha_Nacimiento,
+                               Fecha_Ingreso = C.Fecha_Ingreso,
+                               ID_Area = C.ID_Area,
+                               ID_Puesto = C.ID_Puesto
+                           }).ToList();
+
+                var usu = (from U in PE.Usuario
+                           select new expUsuario
+                           {
+                               ID_Usuario = U.ID_Usuario,
+                               ID_Colaborador = U.ID_Colaborador,
+                               Privilegios = U.Privilegios
+                           }).ToList();
+
+                var are = (from A in PE.Area
+                           select new expArea
+                           {
+                               ID_Area = A.ID_Area,
+                               Descripcion = A.Descripcion
+                           }).ToList();
+
+                var pue = (from P in PE.Puesto
+                           select new expPuesto
+                           {
+                               ID_Puesto = P.ID_Puesto,
+                               Descripcion = P.Descripcion
+                           }).ToList();
+
+                slDocumento.SetCellValue(1, 1, "ID_Colaborador");
+                slDocumento.SetCellValue(1, 2, "Nombre");
+                slDocumento.SetCellValue(1, 3, "Genero");
+                slDocumento.SetCellValue(1, 4, "Edad");
+                slDocumento.SetCellValue(1, 5, "Fecha_Nacimiento");
+                slDocumento.SetCellValue(1, 6, "Fecha_Ingreso");
+                slDocumento.SetCellValue(1, 7, "Area");
+                slDocumento.SetCellValue(1, 8, "Puesto");
+
+                foreach (expColaborador colaborador in col)
+                {
+                    slDocumento.SetCellValue(indxFila, 1, colaborador.ID_Colaborador);
+                    slDocumento.SetCellValue(indxFila, 2, colaborador.Nombre);
+                    slDocumento.SetCellValue(indxFila, 3, colaborador.Genero);
+                    slDocumento.SetCellValue(indxFila, 4, colaborador.Edad);
+                    slDocumento.SetCellValue(indxFila, 5, colaborador.Fecha_Nacimiento);
+                    slDocumento.SetCellValue(indxFila, 6, colaborador.Fecha_Ingreso);
+                    slDocumento.SetCellValue(indxFila, 7, colaborador.ID_Area);
+                    slDocumento.SetCellValue(indxFila, 8, colaborador.ID_Puesto);
+                    indxFila++;
+                }
+                indxFila--;
+                SLTable tbl = slDocumento.CreateTable("A1", "H"+indxFila);
+                tbl.SetTableStyle(SLTableStyleTypeValues.Medium1);
+                slDocumento.InsertTable(tbl);
+
+                slDocumento.SetCellValue(1, 10, "ID_Usuario");
+                slDocumento.SetCellValue(1, 11, "ID_Colaborador");
+                slDocumento.SetCellValue(1, 12, "Contrasenna");
+                slDocumento.SetCellValue(1, 13, "Privilegios");
+
+                indxFila = 2;
+                foreach (expUsuario usuario in usu)
+                {
+                    slDocumento.SetCellValue(indxFila, 10, usuario.ID_Usuario);
+                    slDocumento.SetCellValue(indxFila, 11, usuario.ID_Colaborador);
+                    slDocumento.SetCellValue(indxFila, 12, "*****");
+                    slDocumento.SetCellValue(indxFila, 13, usuario.Privilegios);
+                    indxFila++;
+                }
+                indxFila--;
+                tbl = slDocumento.CreateTable("J1", "M" + indxFila);
+                tbl.SetTableStyle(SLTableStyleTypeValues.Medium1);
+                slDocumento.InsertTable(tbl);
+
+                slDocumento.SetCellValue(1, 15, "ID_Area");
+                slDocumento.SetCellValue(1, 16, "Descripcion");
+
+                indxFila = 2;
+                foreach (expArea area in are)
+                {
+                    slDocumento.SetCellValue(indxFila, 15, area.ID_Area);
+                    slDocumento.SetCellValue(indxFila, 16, area.Descripcion);
+                    indxFila++;
+                }
+                indxFila--;
+                tbl = slDocumento.CreateTable("O1", "P" + indxFila);
+                tbl.SetTableStyle(SLTableStyleTypeValues.Medium1);
+                slDocumento.InsertTable(tbl);
+
+                slDocumento.SetCellValue(1, 18, "ID_Puesto");
+                slDocumento.SetCellValue(1, 19, "Descripcion");
+
+                indxFila = 2;
+                foreach (expPuesto puesto in pue)
+                {
+                    slDocumento.SetCellValue(indxFila, 18, puesto.ID_Puesto);
+                    slDocumento.SetCellValue(indxFila, 19, puesto.Descripcion);
+                    indxFila++;
+                }
+                indxFila--;
+                tbl = slDocumento.CreateTable("R1", "S" + indxFila);
+                tbl.SetTableStyle(SLTableStyleTypeValues.Medium1);
+                slDocumento.InsertTable(tbl);
+
+                slDocumento.AutoFitColumn("A", "S");
+                slDocumento.SaveAs(@"C:\Users\andre\Desktop\ListadoColaboradores.xlsx");
+                MessageBox.Show("Datos exportados exitosamente al documento 'ListadoColaboradores.xlsx'");
+            }
+            return true;
+        }
+        #endregion
+
+        #region Bitacora
+        public void registrarEntrada(int ID)
+        {
+            using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+            {
+                DataBase.Bitacora bitacora = new DataBase.Bitacora();
+                bitacora.ID_Usuario = ID;
+                bitacora.Fecha = DateTime.Today;
+                bitacora.Hora_Entrada = DateTime.Now.TimeOfDay;
+                bitacora.Hora_Salida = DateTime.Now.TimeOfDay;
+                PE.Bitacora.Add(bitacora);
+                PE.SaveChanges();
+            }
+        }
+        public void registrarSalida(int ID)
+        {
+            using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+            {
+                DataBase.Bitacora bitacora = PE.Bitacora.Where(x => x.ID_Usuario == ID && x.Fecha == DateTime.Today).FirstOrDefault();
+                bitacora.Hora_Salida = DateTime.Now.TimeOfDay;
+                PE.SaveChanges();
+            }
+        }
+        #endregion
+
+        #region Reporte
+        public void registrarEvento(int usu, int col, int eve)
+        {
+            using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+            {
+                DataBase.Reporte reporte = new DataBase.Reporte();
+                reporte.ID_Usuario = usu;
+                reporte.ID_Colaborador = col;
+                reporte.ID_Evento = eve;
+                reporte.Fecha = DateTime.Today;
+                reporte.Hora = DateTime.Now.TimeOfDay;
+                PE.Reporte.Add(reporte);
+                PE.SaveChanges();
             }
         }
         #endregion
