@@ -30,23 +30,27 @@ namespace FrontEnd
         private void AdmUsuarios_Load(object sender, EventArgs e)
         {
             dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
-            dgvUsuarios.DataSource = fdb.ConsultaUsuarios();
+            dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbId.Text = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
-            if (Convert.ToBoolean(dgvUsuarios.CurrentRow.Cells[4].Value))
+            try
             {
-                cbPrivilegio.Checked = true;
-            } else
-            {
-                cbPrivilegio.Checked = false;
+                tbId.Text = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
+                if (Convert.ToBoolean(dgvUsuarios.CurrentRow.Cells[4].Value))
+                {
+                    cbPrivilegio.Checked = true;
+                }
+                else
+                {
+                    cbPrivilegio.Checked = false;
+                }
             }
-        }
-
-        private void dgvColaboradores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             
         }
 
@@ -81,16 +85,15 @@ namespace FrontEnd
                 }
                 else
                 {
-                    if (fdb.RegistrarUsuario(Convert.ToInt32(tbId.Text), tbContrasenna.Text, cbPrivilegio.Checked))
+                    if (fdb.RegistrarUsuario(Convert.ToInt32(tbId.Text),tbContrasenna.Text,cbPrivilegio.Checked))
                     {
-                        MessageBox.Show("Se registro correctamente.");
-                        dgvUsuarios.DataSource = fdb.ConsultaUsuarios();
-                    }
-                    else
+                        MessageBox.Show("Se registro exitosamente.");
+                        dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
+
+                    } else
                     {
-                        MessageBox.Show("No se pudo registrar al usuario.");
+                        MessageBox.Show("Hubo un error al registrar el usuario.");
                     }
-                    
                 }
             }
         }
@@ -102,7 +105,7 @@ namespace FrontEnd
                 if (fdb.ActualizarUsuario(Convert.ToInt32(tbId.Text), tbContrasenna.Text, cbPrivilegio.Checked))
                 {
                     MessageBox.Show("Se modifico correctamente.");
-                    dgvUsuarios.DataSource = fdb.ConsultaUsuarios();
+                    dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
                 }
                 else
                 {
@@ -120,7 +123,7 @@ namespace FrontEnd
                 if (fdb.EliminarUsuario(Convert.ToInt32(tbId.Text)))
                 {
                     MessageBox.Show("Se elimino correctamente.");
-                    dgvUsuarios.DataSource = fdb.ConsultaUsuarios();
+                    dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
                 } else
                 {
                     MessageBox.Show("No se pudo eliminar.");
@@ -131,6 +134,18 @@ namespace FrontEnd
         private void dgvColaboradores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbId.Text = dgvColaboradores.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void tbId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Char.IsDigit(e.KeyChar) && tbId.Text.Length <= 8) || e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

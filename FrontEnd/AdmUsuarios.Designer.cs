@@ -49,6 +49,7 @@
             // 
             resources.ApplyResources(this.tbId, "tbId");
             this.tbId.Name = "tbId";
+            this.tbId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbId_KeyPress);
             // 
             // dgvColaboradores
             // 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DataBase;
 
 namespace BackEnd
@@ -146,7 +147,7 @@ namespace BackEnd
                 return null;
             }
         }
-        public List<Usuario> ConsultaUsuarios()
+        public List<Usuario> ConsultaUsuarios(Usuario us)
         {
             try
             {
@@ -156,6 +157,7 @@ namespace BackEnd
                                     join A in PE.Area on C.ID_Area equals A.ID_Area
                                     join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
                                     join U in PE.Usuario on C.ID_Colaborador equals U.ID_Colaborador
+                                    where U.ID_Colaborador != us.ID_Colaborador
                                     select new Usuario
                                     {
                                         ID_Colaborador = C.ID_Colaborador,
@@ -180,13 +182,15 @@ namespace BackEnd
                 {
                     var query = (from C in PE.Colaborador
                                 join A in PE.Area on C.ID_Area equals A.ID_Area
-                                select A.Descripcion).ToList();
+                                orderby A.Descripcion
+                                select A.Descripcion).Distinct().ToList();
                     return query;
                 } else
                 {
                     var query = (from C in PE.Colaborador
                                  join A in PE.Area on C.ID_Area equals A.ID_Area
                                  where C.ID_Colaborador == us.ID_Colaborador
+                                 orderby A.Descripcion
                                  select A.Descripcion).ToList();
                     return query;
                 }
@@ -200,12 +204,21 @@ namespace BackEnd
                              join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
                              join A in PE.Area on C.ID_Area equals A.ID_Area
                              where A.Descripcion == DescArea
-                             select P.Descripcion).ToList();
+                             orderby P.Descripcion
+                             select P.Descripcion).Distinct().ToList();
                 return query;
             }
         }
-
-
+        public List<String> BusquedaGenero()
+        {
+            using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+            {
+                var query = (from C in PE.Colaborador
+                             select C.Genero).Distinct().ToList();
+                return query;
+            }
+        }
+        
         #region Usuarios
         public bool RegistrarUsuario(int ID, string Contrasenna, bool Privilegio)
         {
@@ -258,6 +271,94 @@ namespace BackEnd
                     PE.Usuario.Remove(usuario);
                     PE.SaveChanges();
                     return true;
+                }
+            }
+        }
+        #endregion
+
+        #region Colaboradores
+        public bool RegistrarColaborador(int ID, string Nombre, string Genero, int Edad, DateTime Fecha_Nacimiento, DateTime Fecha_Ingreso, string Desc_Puesto, string Desc_Area)
+        {
+            if (BusquedaColaborador(ID) == null)
+            {
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    var idA = (from A in PE.Area
+                              where A.Descripcion == Desc_Area
+                              select A.ID_Area).ToList().FirstOrDefault();
+                    var idP = (from P in PE.Puesto
+                              where P.Descripcion == Desc_Puesto
+                              select P.ID_Puesto).ToList().FirstOrDefault();
+                    DataBase.Colaborador colaborador = new DataBase.Colaborador();
+                    colaborador.ID_Colaborador = ID;
+                    colaborador.Nombre = Nombre;
+                    colaborador.Genero = Genero;
+                    colaborador.Edad = Edad;
+                    colaborador.Fecha_Nacimiento = Fecha_Nacimiento;
+                    colaborador.Fecha_Ingreso = Fecha_Ingreso;
+                    colaborador.ID_Puesto = idP;
+                    colaborador.ID_Area = idA;
+                    PE.Colaborador.Add(colaborador);
+                    PE.SaveChanges();
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ActualizarColaborador(int ID, string Nombre, string Genero, int Edad, DateTime Fecha_Nacimiento, DateTime Fecha_Ingreso, string Desc_Puesto, string Desc_Area)
+        {
+            if (BusquedaColaborador(ID) == null)
+            {
+                return false;
+            }
+            else
+            {
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    var idA = (from A in PE.Area
+                               where A.Descripcion == Desc_Area
+                               select A.ID_Area).ToList().FirstOrDefault();
+                    var idP = (from P in PE.Puesto
+                               where P.Descripcion == Desc_Puesto
+                               select P.ID_Puesto).ToList().FirstOrDefault();
+                    DataBase.Colaborador colaborador = PE.Colaborador.Where(x => x.ID_Colaborador == ID).FirstOrDefault();
+                    colaborador.ID_Colaborador = ID;
+                    colaborador.Nombre = Nombre;
+                    colaborador.Genero = Genero;
+                    colaborador.Edad = Edad;
+                    colaborador.Fecha_Nacimiento = Fecha_Nacimiento;
+                    colaborador.Fecha_Ingreso = Fecha_Ingreso;
+                    colaborador.ID_Puesto = idP;
+                    colaborador.ID_Area = idA;
+                    PE.SaveChanges();
+                    return true;
+                }
+            }
+        }
+        public bool EliminarColaborador(int ID)
+        {
+            if (BusquedaColaborador(ID) == null)
+            {
+                return false;
+            }
+            else
+            {
+                using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
+                {
+                    if (BusquedaUsuario(ID) == null)
+                    {
+                        DataBase.Colaborador colaborador = PE.Colaborador.Where(x => x.ID_Colaborador == ID).FirstOrDefault();
+                        PE.Colaborador.Remove(colaborador);
+                        PE.SaveChanges();
+                        return true;
+                    } else
+                    {
+                        MessageBox.Show("Para eliminar un colaborador con usuario, debe de eliminar primero el usuario correspondiente.");
+                        return false;
+                    }
                 }
             }
         }

@@ -112,22 +112,26 @@
             // 
             resources.ApplyResources(this.tbID, "tbID");
             this.tbID.Name = "tbID";
+            this.tbID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbID_KeyPress);
             // 
             // tbNombre
             // 
             resources.ApplyResources(this.tbNombre, "tbNombre");
             this.tbNombre.Name = "tbNombre";
+            this.tbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNombre_KeyPress);
             // 
             // tbEdad
             // 
             resources.ApplyResources(this.tbEdad, "tbEdad");
             this.tbEdad.Name = "tbEdad";
+            this.tbEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbEdad_KeyPress);
             // 
             // cbGenero
             // 
             this.cbGenero.FormattingEnabled = true;
             resources.ApplyResources(this.cbGenero, "cbGenero");
             this.cbGenero.Name = "cbGenero";
+            this.cbGenero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGenero_KeyPress);
             // 
             // cbArea
             // 
@@ -135,12 +139,14 @@
             resources.ApplyResources(this.cbArea, "cbArea");
             this.cbArea.Name = "cbArea";
             this.cbArea.SelectedIndexChanged += new System.EventHandler(this.cbArea_SelectedIndexChanged);
+            this.cbArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbArea_KeyPress);
             // 
             // cbPuesto
             // 
             this.cbPuesto.FormattingEnabled = true;
             resources.ApplyResources(this.cbPuesto, "cbPuesto");
             this.cbPuesto.Name = "cbPuesto";
+            this.cbPuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbPuesto_KeyPress);
             // 
             // dtpNacimiento
             // 
@@ -166,12 +172,14 @@
             resources.ApplyResources(this.btModificar, "btModificar");
             this.btModificar.Name = "btModificar";
             this.btModificar.UseVisualStyleBackColor = true;
+            this.btModificar.Click += new System.EventHandler(this.btModificar_Click);
             // 
             // btEliminar
             // 
             resources.ApplyResources(this.btEliminar, "btEliminar");
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // btExportar
             // 
