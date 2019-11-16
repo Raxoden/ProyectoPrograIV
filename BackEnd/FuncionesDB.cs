@@ -105,6 +105,7 @@ namespace BackEnd
                         var query = (from C in PE.Colaborador
                                      join A in PE.Area on C.ID_Area equals A.ID_Area
                                      join P in PE.Puesto on C.ID_Puesto equals P.ID_Puesto
+                                     where P.Descripcion == "Gerente" || A.Descripcion.Contains("RECURSOS HUMANOS")
                                      select new Colaborador
                                      {
                                          ID_Colaborador = C.ID_Colaborador,

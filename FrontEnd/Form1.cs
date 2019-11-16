@@ -18,6 +18,9 @@ namespace FrontEnd
             InitializeComponent();
         }
 
+        /*
+         * Función Validacion, comprueba que los campos necesarios no esten vacios.
+         */
         public bool Validacion()
         {
             if (String.IsNullOrEmpty(tbUsuario.Text) || String.IsNullOrEmpty(tbContrasenna.Text))
@@ -29,30 +32,37 @@ namespace FrontEnd
             }
         }
 
+        /*
+         * Funcion del boton para realizar la validacion de usuario en la base de datos.
+         */
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Validacion())
+            if (Validacion())// Se manda a verificar los campos para recibir true or false.
             {
-                FuncionesDB fdb = new FuncionesDB();
-                if (fdb.Validacion(Convert.ToInt32(tbUsuario.Text), tbContrasenna.Text.Normalize()))
+                FuncionesDB fdb = new FuncionesDB();//Se instancia la clase FuncionesDB para acceder a sus metodos y funciones.
+                if (fdb.Validacion(Convert.ToInt32(tbUsuario.Text), tbContrasenna.Text.Normalize()))//se mandan los datos del usuario a la funcion Validacion de la clase FuncionesDB.
                 {
+                    //Si se recibe la confirmacion de que el usuario es correcto se crea la instancia de Menu y se muestra.
                     Menu m = new Menu(Convert.ToInt32(tbUsuario.Text));
                     m.Show();
                     this.Visible = false;
                 }
                 else
                 {
+                    //Si se recibe un error se indica que los datos son incorrectos.
                     MessageBox.Show("Los datos ingresados son incorrectos.");
                 }
             } else
             {
+                //si se encuentra algun espacio vacio se indicara que deberan llenarse.
                 MessageBox.Show("Debe llenar todos los campos.");
             }
             
         }
 
+        //Se utiliza el evento de escritura en el TextBoxUsuario para verificar que solo se ingresen numeros.
         private void tbUsuario_KeyPress(object sender, KeyPressEventArgs e)
-        {//Acceso: 105190742 , RX1810
+        {
             if ((Char.IsDigit(e.KeyChar) && tbUsuario.Text.Length <= 8) || e.KeyChar == Convert.ToChar(Keys.Back))
             {
                 e.Handled = false;
@@ -62,10 +72,5 @@ namespace FrontEnd
             }
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            
-
-        }
     }
 }
