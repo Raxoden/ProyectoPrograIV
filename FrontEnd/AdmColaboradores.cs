@@ -14,13 +14,6 @@ namespace FrontEnd
 {
     public partial class AdmColaboradores : Form
     {
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-        FuncionesDB fdb = new FuncionesDB();
-        Usuario Usuario;
 
         FuncionesDB fdb = new FuncionesDB();
         Usuario Usuario;
@@ -29,7 +22,11 @@ namespace FrontEnd
             InitializeComponent();
             this.Usuario = Usuario;
         }
-        
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void AdmColaboradores_Load(object sender, EventArgs e)
         {
             dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
