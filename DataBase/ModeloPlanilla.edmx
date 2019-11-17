@@ -178,7 +178,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SistemaPlanillaEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SistemaPlanillaEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Area" EntityType="Self.Area" />
           <EntitySet Name="Colaborador" EntityType="Self.Colaborador" />
           <EntitySet Name="Puesto" EntityType="Self.Puesto" />
@@ -201,7 +201,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SistemaPlanillaModelStoreContainer" CdmEntityContainer="SistemaPlanillaEntities1">
+        <EntityContainerMapping StorageEntityContainer="SistemaPlanillaModelStoreContainer" CdmEntityContainer="SistemaPlanillaEntities">
           <EntitySetMapping Name="Area">
             <EntityTypeMapping TypeName="SistemaPlanillaModel.Area">
               <MappingFragment StoreEntitySet="Area">

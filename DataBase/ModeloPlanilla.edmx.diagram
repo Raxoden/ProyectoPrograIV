@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2568fd27177043feb6f44247a8c71305" Name="Diagram1">
-        <EntityTypeShape EntityType="SistemaPlanillaModel.Area" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
+      <Diagram DiagramId="cf3183bd43974d2b864606c19f82d45d" Name="Diagram1" ZoomLevel="70">
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Area" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SistemaPlanillaModel.Colaborador" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SistemaPlanillaModel.Puesto" Width="1.5" PointX="0.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemaPlanillaModel.Puesto" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SistemaPlanillaModel.Usuario" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="SistemaPlanillaModel.FK__Colaborad__ID_Ar__6383C8BA" ManuallyRouted="false" />
         <AssociationConnector Association="SistemaPlanillaModel.FK__Colaborad__ID_Pu__628FA481" ManuallyRouted="false" />

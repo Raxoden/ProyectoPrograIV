@@ -18,28 +18,74 @@ namespace FrontEnd
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public bool Validacion()
         {
-            FuncionesDB fdb = new FuncionesDB();
-            if (fdb.Validacion(Convert.ToInt32(tbUsuario.Text), tbContrasenna.Text.Normalize()))
+            if (String.IsNullOrEmpty(tbUsuario.Text) || String.IsNullOrEmpty(tbContrasenna.Text))
             {
-                Menu m = new Menu(Convert.ToInt32(tbUsuario.Text));
-                m.Show();
+                return false;
             } else
             {
-                MessageBox.Show("Los datos ingresados son incorrectos.");
+                return true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Validacion())
+            {
+                FuncionesDB fdb = new FuncionesDB();
+                if (fdb.Validacion(Convert.ToInt32(tbUsuario.Text), tbContrasenna.Text.Normalize()))
+                {
+                    Menu m = new Menu(Convert.ToInt32(tbUsuario.Text));
+                    m.Show();
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Los datos ingresados son incorrectos.");
+                }
+            } else
+            {
+                MessageBox.Show("Debe llenar todos los campos.");
+            }
+            
         }
 
         private void tbUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {//Acceso: 105190742 , RX1810
-            if ((Char.IsDigit(e.KeyChar) && tbUsuario.Text.Length <= 8) || Char.IsControl(e.KeyChar))
+            if ((Char.IsDigit(e.KeyChar) && tbUsuario.Text.Length <= 8) || e.KeyChar == Convert.ToChar(Keys.Back))
             {
                 e.Handled = false;
             } else
             {
                 e.Handled = true;
             }
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void lineShape2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbContrasenna_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
