@@ -15,10 +15,14 @@ namespace FrontEnd
     public partial class Menu : Form
     {
         FuncionesDB fdb = new FuncionesDB();
-        BackEnd.Colaborador Usuario;
+        AdmColaboradores ac;
+        AdmUsuarios au;
+        BackEnd.Usuario Usuario;
         public Menu(int ID_Usuario)
         {
-            Usuario = fdb.Busqueda(ID_Usuario);
+            Usuario = fdb.BusquedaUsuario(ID_Usuario);
+            ac = new AdmColaboradores(Usuario);
+            au = new AdmUsuarios(Usuario);
             InitializeComponent();
         }
 
@@ -28,18 +32,43 @@ namespace FrontEnd
             lbID.Text = "ID: " + Usuario.ID_Colaborador;
             lbArea.Text = "Area: " + Usuario.Desc_Area;
             lbPuesto.Text = "Puesto: " + Usuario.Desc_Puesto;
+            if (Usuario.Privilegios)
+            {
+                tsUsuario.Visible = true;
+                tsUsuario.Enabled = true;
+            }
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdmUsuarios au = new AdmUsuarios();
-            au.Show();
+            if (!au.Visible)
+            {
+                au.Visible = true;
+            }
         }
 
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdmUsuarios ac = new AdmUsuarios();
-            ac.Show();
+            if (!ac.Visible)
+            {
+                ac.Visible = true;
+            }
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Si cierra esta ventana cerrara el programa", "Aviso!", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            au.Dispose();
+            ac.Dispose();
+            fdb.registrarSalida(Usuario.ID_Usuario);
+            Application.Exit();
         }
     }
 }

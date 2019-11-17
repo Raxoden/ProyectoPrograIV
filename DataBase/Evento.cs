@@ -12,23 +12,17 @@ namespace DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Evento
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
+        public Evento()
         {
-            this.Bitacora = new HashSet<Bitacora>();
             this.Reporte = new HashSet<Reporte>();
         }
     
-        public int ID_Usuario { get; set; }
-        public int ID_Colaborador { get; set; }
-        public string Contrasenna { get; set; }
-        public bool Privilegios { get; set; }
+        public int ID_Evento { get; set; }
+        public string Descripcion { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bitacora> Bitacora { get; set; }
-        public virtual Colaborador Colaborador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reporte> Reporte { get; set; }
     }

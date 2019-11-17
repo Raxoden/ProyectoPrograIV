@@ -245,8 +245,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdmColaboradores.es-CR.resx">
+      <DependentUpon>AdmColaboradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmColaboradores.resx">
+      <DependentUpon>AdmColaboradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmUsuarios.es-CR.resx">
+      <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmUsuarios.resx">
+      <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.es-CR.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.es-CR.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -260,6 +278,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
@@ -287,6 +306,9 @@
       <Project>{51d3311d-0ea0-448e-b6a2-44c0c3fa08e8}</Project>
       <Name>DataBase</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

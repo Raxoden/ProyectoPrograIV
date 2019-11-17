@@ -26,8 +26,11 @@ namespace DataBase
         }
     
         public virtual DbSet<Area> Area { get; set; }
+        public virtual DbSet<Bitacora> Bitacora { get; set; }
         public virtual DbSet<Colaborador> Colaborador { get; set; }
+        public virtual DbSet<Evento> Evento { get; set; }
         public virtual DbSet<Puesto> Puesto { get; set; }
+        public virtual DbSet<Reporte> Reporte { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

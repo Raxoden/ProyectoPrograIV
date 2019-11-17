@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
-    public class Colaborador {
+    class expColaborador
+    {
         public int ID_Colaborador { get; set; }
         public string Nombre { get; set; }
         public string Genero { get; set; }
         public int Edad { get; set; }
-        public string Fecha_Nacimiento { get; set; }
-        public string Fecha_Ingreso { get; set; }
-        public string Desc_Puesto { get; set; }
-        public string Desc_Area { get; set; }
-
+        public System.DateTime Fecha_Nacimiento { get; set; }
+        public System.DateTime Fecha_Ingreso { get; set; }
+        public int ID_Puesto { get; set; }
+        public int ID_Area { get; set; }
     }
 }

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsColaborador = new System.Windows.Forms.ToolStripMenuItem();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.lbArea = new System.Windows.Forms.Label();
@@ -40,83 +41,69 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem,
-            this.colaboradoresToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.tsUsuario,
+            this.tsColaborador});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(605, 30);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
             // 
-            // usuariosToolStripMenuItem
+            // tsUsuario
             // 
-            this.usuariosToolStripMenuItem.Enabled = false;
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            this.usuariosToolStripMenuItem.Visible = false;
-            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            this.tsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            resources.ApplyResources(this.tsUsuario, "tsUsuario");
+            this.tsUsuario.Name = "tsUsuario";
+            this.tsUsuario.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
-            // colaboradoresToolStripMenuItem
+            // tsColaborador
             // 
-            this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
-            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(121, 26);
-            this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
-            this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
+            this.tsColaborador.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tsColaborador.Name = "tsColaborador";
+            resources.ApplyResources(this.tsColaborador, "tsColaborador");
+            this.tsColaborador.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
             // 
             // lbUsuario
             // 
-            this.lbUsuario.AutoSize = true;
-            this.lbUsuario.Location = new System.Drawing.Point(12, 47);
+            this.lbUsuario.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbUsuario, "lbUsuario");
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(61, 17);
-            this.lbUsuario.TabIndex = 2;
-            this.lbUsuario.Text = "Usuario:";
             // 
             // lbID
             // 
-            this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(12, 94);
+            this.lbID.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbID, "lbID");
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(25, 17);
-            this.lbID.TabIndex = 3;
-            this.lbID.Text = "ID:";
             // 
             // lbArea
             // 
-            this.lbArea.AutoSize = true;
-            this.lbArea.Location = new System.Drawing.Point(12, 141);
+            this.lbArea.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbArea, "lbArea");
             this.lbArea.Name = "lbArea";
-            this.lbArea.Size = new System.Drawing.Size(42, 17);
-            this.lbArea.TabIndex = 4;
-            this.lbArea.Text = "Area:";
             // 
             // lbPuesto
             // 
-            this.lbPuesto.AutoSize = true;
-            this.lbPuesto.Location = new System.Drawing.Point(12, 188);
+            this.lbPuesto.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.lbPuesto, "lbPuesto");
             this.lbPuesto.Name = "lbPuesto";
-            this.lbPuesto.Size = new System.Drawing.Size(56, 17);
-            this.lbPuesto.TabIndex = 5;
-            this.lbPuesto.Text = "Puesto:";
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 241);
+            this.BackgroundImage = global::FrontEnd.Properties.Resources.Login;
             this.Controls.Add(this.lbPuesto);
             this.Controls.Add(this.lbArea);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Menu";
-            this.Text = "Menu";
+            this.ShowIcon = false;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -127,8 +114,8 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsUsuario;
+        private System.Windows.Forms.ToolStripMenuItem tsColaborador;
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbArea;
