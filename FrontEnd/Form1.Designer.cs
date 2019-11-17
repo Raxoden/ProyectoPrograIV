@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.tbUsuario = new System.Windows.Forms.TextBox();
-            this.tbContrasenna = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.tbContrasenna = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,14 +51,6 @@
             this.tbUsuario.ForeColor = System.Drawing.Color.DarkGray;
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUsuario_KeyPress);
-            // 
-            // tbContrasenna
-            // 
-            this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.tbContrasenna.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.tbContrasenna, "tbContrasenna");
-            this.tbContrasenna.ForeColor = System.Drawing.Color.DarkGray;
-            this.tbContrasenna.Name = "tbContrasenna";
             // 
             // button1
             // 
@@ -107,26 +99,35 @@
             this.lineShape1});
             this.shapeContainer1.TabStop = false;
             // 
+            // lineShape2
+            // 
+            resources.ApplyResources(this.lineShape2, "lineShape2");
+            this.lineShape2.Name = "lineShape2";
+            // 
             // lineShape1
             // 
             resources.ApplyResources(this.lineShape1, "lineShape1");
             this.lineShape1.Name = "lineShape1";
             // 
-            // lineShape2
+            // tbContrasenna
             // 
-            resources.ApplyResources(this.lineShape2, "lineShape2");
-            this.lineShape2.Name = "lineShape2";
+            this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.tbContrasenna.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.tbContrasenna, "tbContrasenna");
+            this.tbContrasenna.ForeColor = System.Drawing.Color.DarkGray;
+            this.tbContrasenna.Name = "tbContrasenna";
+            this.tbContrasenna.UseSystemPasswordChar = true;
             // 
             // frmLogin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.Controls.Add(this.tbContrasenna);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.tbContrasenna);
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.shapeContainer1);
             this.MaximizeBox = false;
@@ -143,7 +144,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbUsuario;
-        private System.Windows.Forms.TextBox tbContrasenna;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -152,6 +152,7 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.TextBox tbContrasenna;
     }
 }
 

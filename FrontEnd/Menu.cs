@@ -16,13 +16,13 @@ namespace FrontEnd
     {
         FuncionesDB fdb = new FuncionesDB();
         AdmColaboradores ac;
-        AdmUsuarios au;
+        Administración au;
         BackEnd.Usuario Usuario;
         public Menu(int ID_Usuario)
         {
             Usuario = fdb.BusquedaUsuario(ID_Usuario);
             ac = new AdmColaboradores(Usuario);
-            au = new AdmUsuarios(Usuario);
+            au = new Administración(Usuario);
             InitializeComponent();
         }
 

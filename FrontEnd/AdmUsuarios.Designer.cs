@@ -1,6 +1,6 @@
 ﻿namespace FrontEnd
 {
-    partial class AdmUsuarios
+    partial class Administración
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administración));
             this.tbId = new System.Windows.Forms.TextBox();
             this.dgvColaboradores = new System.Windows.Forms.DataGridView();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
@@ -42,8 +42,18 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.cbPrivilegio = new System.Windows.Forms.CheckBox();
             this.btExportar = new System.Windows.Forms.Button();
+            this.MenuVertical = new System.Windows.Forms.Panel();
+            this.btnslide = new System.Windows.Forms.PictureBox();
+            this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.iconcerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.MenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnslide)).BeginInit();
+            this.BarraTitulo.SuspendLayout();
+            this.panelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // tbId
@@ -110,21 +120,36 @@
             // 
             // btCrear
             // 
+            this.btCrear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btCrear.FlatAppearance.BorderSize = 0;
+            this.btCrear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             resources.ApplyResources(this.btCrear, "btCrear");
+            this.btCrear.ForeColor = System.Drawing.Color.White;
             this.btCrear.Name = "btCrear";
             this.btCrear.UseVisualStyleBackColor = true;
             this.btCrear.Click += new System.EventHandler(this.btCrear_Click);
             // 
             // btModificar
             // 
+            this.btModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btModificar.FlatAppearance.BorderSize = 0;
+            this.btModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             resources.ApplyResources(this.btModificar, "btModificar");
+            this.btModificar.ForeColor = System.Drawing.Color.White;
             this.btModificar.Name = "btModificar";
             this.btModificar.UseVisualStyleBackColor = true;
             this.btModificar.Click += new System.EventHandler(this.btModificar_Click);
             // 
             // btEliminar
             // 
+            this.btEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btEliminar.FlatAppearance.BorderSize = 0;
+            this.btEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             resources.ApplyResources(this.btEliminar, "btEliminar");
+            this.btEliminar.ForeColor = System.Drawing.Color.White;
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.UseVisualStyleBackColor = true;
             this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
@@ -138,39 +163,91 @@
             // 
             // btExportar
             // 
+            this.btExportar.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btExportar.FlatAppearance.BorderSize = 0;
+            this.btExportar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btExportar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             resources.ApplyResources(this.btExportar, "btExportar");
+            this.btExportar.ForeColor = System.Drawing.Color.White;
             this.btExportar.Name = "btExportar";
             this.btExportar.UseVisualStyleBackColor = true;
             this.btExportar.Click += new System.EventHandler(this.btExportar_Click);
             // 
-            // AdmUsuarios
+            // MenuVertical
+            // 
+            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.dgvUsuarios);
+            this.MenuVertical.Controls.Add(this.btExportar);
+            this.MenuVertical.Controls.Add(this.btEliminar);
+            this.MenuVertical.Controls.Add(this.btCrear);
+            this.MenuVertical.Controls.Add(this.btModificar);
+            resources.ApplyResources(this.MenuVertical, "MenuVertical");
+            this.MenuVertical.Name = "MenuVertical";
+            this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnslide
+            // 
+            this.btnslide.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnslide, "btnslide");
+            this.btnslide.Name = "btnslide";
+            this.btnslide.TabStop = false;
+            this.btnslide.Click += new System.EventHandler(this.btnslide_Click);
+            // 
+            // BarraTitulo
+            // 
+            this.BarraTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BarraTitulo.Controls.Add(this.iconcerrar);
+            this.BarraTitulo.Controls.Add(this.btnslide);
+            resources.ApplyResources(this.BarraTitulo, "BarraTitulo");
+            this.BarraTitulo.Name = "BarraTitulo";
+            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelContenedor.Controls.Add(this.label1);
+            this.panelContenedor.Controls.Add(this.dgvColaboradores);
+            this.panelContenedor.Controls.Add(this.tbId);
+            this.panelContenedor.Controls.Add(this.label3);
+            this.panelContenedor.Controls.Add(this.label2);
+            this.panelContenedor.Controls.Add(this.tbConfirmar);
+            this.panelContenedor.Controls.Add(this.cbPrivilegio);
+            this.panelContenedor.Controls.Add(this.tbContrasenna);
+            resources.ApplyResources(this.panelContenedor, "panelContenedor");
+            this.panelContenedor.Name = "panelContenedor";
+            // 
+            // iconcerrar
+            // 
+            resources.ApplyResources(this.iconcerrar, "iconcerrar");
+            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconcerrar.Name = "iconcerrar";
+            this.iconcerrar.TabStop = false;
+            this.iconcerrar.Click += new System.EventHandler(this.iconcerrar_Click);
+            // 
+            // Administración
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::FrontEnd.Properties.Resources.Login;
-            this.Controls.Add(this.btExportar);
-            this.Controls.Add(this.cbPrivilegio);
-            this.Controls.Add(this.btEliminar);
-            this.Controls.Add(this.btModificar);
-            this.Controls.Add(this.btCrear);
-            this.Controls.Add(this.tbConfirmar);
-            this.Controls.Add(this.tbContrasenna);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvUsuarios);
-            this.Controls.Add(this.dgvColaboradores);
-            this.Controls.Add(this.tbId);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.BarraTitulo);
+            this.Controls.Add(this.MenuVertical);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AdmUsuarios";
+            this.Name = "Administración";
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdmUsuarios_FormClosing);
             this.Load += new System.EventHandler(this.AdmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.MenuVertical.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnslide)).EndInit();
+            this.BarraTitulo.ResumeLayout(false);
+            this.panelContenedor.ResumeLayout(false);
+            this.panelContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -189,5 +266,10 @@
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.CheckBox cbPrivilegio;
         private System.Windows.Forms.Button btExportar;
+        private System.Windows.Forms.Panel MenuVertical;
+        private System.Windows.Forms.PictureBox btnslide;
+        private System.Windows.Forms.Panel BarraTitulo;
+        private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.PictureBox iconcerrar;
     }
 }

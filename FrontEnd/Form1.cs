@@ -72,5 +72,9 @@ namespace FrontEnd
             }
         }
 
+        private void tbContrasenna_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

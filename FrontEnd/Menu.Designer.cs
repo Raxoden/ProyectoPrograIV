@@ -36,18 +36,20 @@
             this.lbID = new System.Windows.Forms.Label();
             this.lbArea = new System.Windows.Forms.Label();
             this.lbPuesto = new System.Windows.Forms.Label();
+            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkGray;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsUsuario,
             this.tsColaborador});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             // 
             // tsUsuario
             // 
@@ -87,11 +89,17 @@
             resources.ApplyResources(this.lbPuesto, "lbPuesto");
             this.lbPuesto.Name = "lbPuesto";
             // 
+            // skinEngine1
+            // 
+            this.skinEngine1.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA==";
+            this.skinEngine1.SkinFile = "C:\\Users\\pc\\Downloads\\Componentes Graficos Vb2\\SKIN NET 2010 WIN 7\\SkinVS.NET\\Car" +
+    "lmness\\CalmnessColor1.ssk";
+            this.skinEngine1.SkinStreamMain = ((System.IO.Stream)(resources.GetObject("skinEngine1.SkinStreamMain")));
+            // 
             // Menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::FrontEnd.Properties.Resources.Login;
             this.Controls.Add(this.lbPuesto);
             this.Controls.Add(this.lbArea);
             this.Controls.Add(this.lbID);
@@ -120,5 +128,6 @@
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbArea;
         private System.Windows.Forms.Label lbPuesto;
+        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }
