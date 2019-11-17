@@ -8,11 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd;
+using System.Runtime.InteropServices;
 
 namespace FrontEnd
 {
     public partial class AdmColaboradores : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        FuncionesDB fdb = new FuncionesDB();
+        Usuario Usuario;
+
         FuncionesDB fdb = new FuncionesDB();
         Usuario Usuario;
         public AdmColaboradores(Usuario Usuario)
@@ -185,6 +194,22 @@ namespace FrontEnd
         private void iconcerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnslide_Click(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 250)
+            {
+                MenuVertical.Width = 70;
+            }
+            else
+                MenuVertical.Width = 250;
+        }
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
