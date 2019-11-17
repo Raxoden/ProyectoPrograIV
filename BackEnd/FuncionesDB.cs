@@ -9,8 +9,17 @@ using SpreadsheetLight;
 
 namespace BackEnd
 {
+    /// <summary>
+    /// Clase que almacena todas las funciones que se ejecutan en el programa.
+    /// </summary>
     public class FuncionesDB
     {
+        /// <summary>
+        /// Verifica si el usuario existe y si sus credenciales son correctas.
+        /// </summary>
+        /// <param name="us">El ID del colaborador que se utiliza como nombre de usuario.</param>
+        /// <param name="pa">La contraseña del colaborador con la cual ingresa a sus usuario.</param>
+        /// <returns>Si las credenciales estan correctas devuelve verdadero, devuelve falso cuando son incorrectas.</returns>
         public Boolean Validacion(int us, string pa)
         {
             try
@@ -39,6 +48,11 @@ namespace BackEnd
                 return false;
             }
         }
+        /// <summary>
+        /// Busca un colaborador y devuelve el objeto con la información necesaria.
+        /// </summary>
+        /// <param name="ID">Recibe el ID del colaborador.</param>
+        /// <returns>Si se encuentra se devuelve verdadero, si no se encuentra devolvera falso</returns>
         public Colaborador BusquedaColaborador(int ID)
         {
             try
@@ -69,6 +83,11 @@ namespace BackEnd
                 return null;
             }
         }
+        /// <summary>
+        /// Busca un usuario y devuelve el objeto con la información necesaria.
+        /// </summary>
+        /// <param name="ID">Recibe el ID del colaborador.</param>
+        /// <returns>Si se encuentra se devuelve verdadero, si no se encuentra devolvera falso</returns>
         public Usuario BusquedaUsuario(int ID)
         {
             try
@@ -98,7 +117,11 @@ namespace BackEnd
                 return null;
             }
         }
-        public List<Colaborador> ConsultaGerentes(Usuario us)
+        /// <summary>
+        /// Hace la consulta de todos los colaboradores.
+        /// </summary>
+        /// <returns>Devuelve todos los colaboradores que sean Gerentes o del departamento de Recursos Humanos</returns>
+        public List<Colaborador> ConsultaGerentes()
         {
             try
             {
@@ -128,6 +151,12 @@ namespace BackEnd
                 return null;
             }
         }
+        /// <summary>
+        /// Hace la consulta de todos los colaboradores.
+        /// </summary>
+        /// <param name="us">Se recibe el Usuario</param>
+        /// <returns>Devuelve todos los colaboradores si se cuenta con privilegios,
+        /// si no se cuenta con privilegios se devuelven los colaboradores de la misma Area que el usuario.</returns>
         public List<Colaborador> ConsultaColaboradores(Usuario us)
         {
             try

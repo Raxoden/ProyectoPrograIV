@@ -23,13 +23,6 @@ namespace FrontEnd
         
         private void AdmColaboradores_Load(object sender, EventArgs e)
         {
-            dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
-            cbArea.DataSource = fdb.BusquedaArea(Usuario);
-            cbGenero.DataSource = fdb.BusquedaGenero();
-            dtpIngreso.MaxDate = System.DateTime.Now;
-            dtpNacimiento.MaxDate = System.DateTime.Now.AddYears(-18);
-            dtpIngreso.MinDate = System.DateTime.Now.AddYears(-100);
-            dtpNacimiento.MinDate = System.DateTime.Now.AddYears(-100);
         }
 
         public bool Validacion()
@@ -175,6 +168,17 @@ namespace FrontEnd
             dtpIngreso.Value = Convert.ToDateTime(dgvColaboradores.CurrentRow.Cells[5].Value);
             cbArea.Text = dgvColaboradores.CurrentRow.Cells[7].Value.ToString();
             cbPuesto.Text = dgvColaboradores.CurrentRow.Cells[6].Value.ToString();
+        }
+
+        private void AdmColaboradores_Shown(object sender, EventArgs e)
+        {
+            dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
+            cbArea.DataSource = fdb.BusquedaArea(Usuario);
+            cbGenero.DataSource = fdb.BusquedaGenero();
+            dtpIngreso.MaxDate = System.DateTime.Now;
+            dtpNacimiento.MaxDate = System.DateTime.Now.AddYears(-18);
+            dtpIngreso.MinDate = System.DateTime.Now.AddYears(-100);
+            dtpNacimiento.MinDate = System.DateTime.Now.AddYears(-100);
         }
     }
 }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
+    /// <summary>
+    /// Clase utilizada para la representacion exacta del objeto Area
+    /// </summary>
     class expArea
     {
         public int ID_Area { get; set; }

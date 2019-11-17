@@ -29,8 +29,6 @@ namespace FrontEnd
 
         private void AdmUsuarios_Load(object sender, EventArgs e)
         {
-            dgvColaboradores.DataSource = fdb.ConsultaGerentes(Usuario);
-            dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -155,6 +153,13 @@ namespace FrontEnd
         {
             fdb.registrarEvento(Usuario.ID_Usuario, 0, 7);
             fdb.ExportarExcel();
+        }
+
+        private void AdmUsuarios_Shown(object sender, EventArgs e)
+        {
+
+            dgvColaboradores.DataSource = fdb.ConsultaGerentes();
+            dgvUsuarios.DataSource = fdb.ConsultaUsuarios(Usuario);
         }
     }
 }

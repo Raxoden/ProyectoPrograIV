@@ -167,6 +167,7 @@
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdmUsuarios_FormClosing);
             this.Load += new System.EventHandler(this.AdmUsuarios_Load);
+            this.Shown += new System.EventHandler(this.AdmUsuarios_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);

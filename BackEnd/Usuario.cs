@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
+     /// <summary>
+     /// Clase utilizada para la consulta modificada del objeto Usuario
+     /// </summary>
     public class Usuario
     {
         public int ID_Usuario { get; set; }

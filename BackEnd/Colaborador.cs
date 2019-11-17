@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
+    /// <summary>
+    /// Clase utilizada para la consulta modificada del objeto Colaborador
+    /// </summary>
     public class Colaborador {
         public int ID_Colaborador { get; set; }
         public string Nombre { get; set; }

@@ -45,7 +45,7 @@ namespace FrontEnd
                     //Si se recibe la confirmacion de que el usuario es correcto se crea la instancia de Menu y se muestra.
                     Menu m = new Menu(Convert.ToInt32(tbUsuario.Text));
                     m.Show();
-                    this.Visible = false;
+                    this.Visible = false;//se oculta la ventana principal de login para evitar que se cierre la aplicacion
                 }
                 else
                 {
@@ -60,9 +60,12 @@ namespace FrontEnd
             
         }
 
-        //Se utiliza el evento de escritura en el TextBoxUsuario para verificar que solo se ingresen numeros.
+        /*
+        *Se utiliza el evento de escritura en el TextBoxUsuario para verificar que solo se ingresen numeros.
+        */
         private void tbUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Se verifica que solo se ingresen numeros y se llegue a un largo de 9, ademas de permitir borrar lo escrito.
             if ((Char.IsDigit(e.KeyChar) && tbUsuario.Text.Length <= 8) || e.KeyChar == Convert.ToChar(Keys.Back))
             {
                 e.Handled = false;

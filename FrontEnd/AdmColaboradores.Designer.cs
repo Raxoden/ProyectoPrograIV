@@ -214,6 +214,7 @@
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdmColaboradores_FormClosing);
             this.Load += new System.EventHandler(this.AdmColaboradores_Load);
+            this.Shown += new System.EventHandler(this.AdmColaboradores_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

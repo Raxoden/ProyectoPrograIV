@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
+    /// <summary>
+    /// Clase utilizada para la representacion exacta del objeto Colaborador
+    /// </summary>
     class expColaborador
     {
         public int ID_Colaborador { get; set; }
