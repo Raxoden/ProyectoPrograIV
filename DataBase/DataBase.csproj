@@ -92,11 +92,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
     <EntityDeploy Include="ModeloPlanilla.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeloPlanilla.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="ModeloPlanilla.edmx.diagram">
       <DependentUpon>ModeloPlanilla.edmx</DependentUpon>
     </None>
