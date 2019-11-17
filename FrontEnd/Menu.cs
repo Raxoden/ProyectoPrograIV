@@ -70,5 +70,15 @@ namespace FrontEnd
             fdb.registrarSalida(Usuario.ID_Usuario);
             Application.Exit();
         }
+
+        private void lineShape4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPuesto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

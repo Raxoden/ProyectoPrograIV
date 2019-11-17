@@ -39,8 +39,10 @@
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tbContrasenna = new System.Windows.Forms.TextBox();
+            this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUsuario
@@ -118,11 +120,20 @@
             this.tbContrasenna.Name = "tbContrasenna";
             this.tbContrasenna.UseSystemPasswordChar = true;
             // 
+            // iconcerrar
+            // 
+            resources.ApplyResources(this.iconcerrar, "iconcerrar");
+            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconcerrar.Name = "iconcerrar";
+            this.iconcerrar.TabStop = false;
+            this.iconcerrar.Click += new System.EventHandler(this.iconcerrar_Click);
+            // 
             // frmLogin
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.Controls.Add(this.iconcerrar);
             this.Controls.Add(this.tbContrasenna);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -130,12 +141,14 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.shapeContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.ShowIcon = false;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,6 +166,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TextBox tbContrasenna;
+        private System.Windows.Forms.PictureBox iconcerrar;
     }
 }
 

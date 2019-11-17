@@ -361,24 +361,6 @@
   <data name="&gt;&gt;btExportar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Perpetua Titling MT, 12pt, style=Bold</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 13</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 20</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>MUNICIPALIDAD SAN JOSE</value>
-  </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
@@ -504,24 +486,6 @@
   <data name="&gt;&gt;btnslide.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 13</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 13</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>ADMINISTRACÓN DE USUARIOS</value>
-  </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
@@ -533,62 +497,6 @@
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="iconcerrar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="iconcerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="iconcerrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>577, 0</value>
-  </data>
-  <data name="iconcerrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="iconcerrar.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="iconcerrar.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
   </data>
   <data name="&gt;&gt;iconcerrar.Name" xml:space="preserve">
     <value>iconcerrar</value>
@@ -626,6 +534,60 @@
   <data name="&gt;&gt;BarraTitulo.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="iconcerrar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="iconcerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="iconcerrar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>577, 0</value>
+  </data>
+  <data name="iconcerrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="iconcerrar.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="iconcerrar.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;iconcerrar.Name" xml:space="preserve">
+    <value>iconcerrar</value>
+  </data>
+  <data name="&gt;&gt;iconcerrar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iconcerrar.Parent" xml:space="preserve">
+    <value>BarraTitulo</value>
+  </data>
+  <data name="&gt;&gt;iconcerrar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="tbContrasenna.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 62</value>
   </data>
@@ -660,7 +622,7 @@
     <value>NoControl</value>
   </data>
   <data name="cbPrivilegio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 26</value>
+    <value>452, 22</value>
   </data>
   <data name="cbPrivilegio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -918,6 +880,66 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelContenedor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Perpetua Titling MT, 12pt, style=Bold</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 13</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 20</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>MUNICIPALIDAD SAN JOSE</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>MenuVertical</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 13</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>ADMINISTRACÓN DE USUARIOS</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>BarraTitulo</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

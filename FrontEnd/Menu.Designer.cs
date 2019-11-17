@@ -36,12 +36,21 @@
             this.lbID = new System.Windows.Forms.Label();
             this.lbArea = new System.Windows.Forms.Label();
             this.lbPuesto = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.DarkGray;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsUsuario,
@@ -52,16 +61,16 @@
             // 
             // tsUsuario
             // 
-            this.tsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tsUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             resources.ApplyResources(this.tsUsuario, "tsUsuario");
             this.tsUsuario.Name = "tsUsuario";
             this.tsUsuario.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // tsColaborador
             // 
-            this.tsColaborador.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tsColaborador.Name = "tsColaborador";
+            this.tsColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             resources.ApplyResources(this.tsColaborador, "tsColaborador");
+            this.tsColaborador.Name = "tsColaborador";
             this.tsColaborador.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
             // 
             // lbUsuario
@@ -87,16 +96,67 @@
             this.lbPuesto.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.lbPuesto, "lbPuesto");
             this.lbPuesto.Name = "lbPuesto";
+            this.lbPuesto.Click += new System.EventHandler(this.lbPuesto_Click);
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // shapeContainer1
+            // 
+            resources.ApplyResources(this.shapeContainer1, "shapeContainer1");
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape4,
+            this.lineShape3,
+            this.lineShape2,
+            this.lineShape1});
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            resources.ApplyResources(this.lineShape1, "lineShape1");
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            resources.ApplyResources(this.lineShape2, "lineShape2");
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.Name = "lineShape3";
+            resources.ApplyResources(this.lineShape3, "lineShape3");
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.Name = "lineShape4";
+            resources.ApplyResources(this.lineShape4, "lineShape4");
+            this.lineShape4.Click += new System.EventHandler(this.lineShape4_Click);
+            // 
+            // iconcerrar
+            // 
+            resources.ApplyResources(this.iconcerrar, "iconcerrar");
+            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconcerrar.Name = "iconcerrar";
+            this.iconcerrar.TabStop = false;
             // 
             // Menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.iconcerrar);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lbPuesto);
             this.Controls.Add(this.lbArea);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.shapeContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -107,6 +167,8 @@
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +182,12 @@
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label lbArea;
         private System.Windows.Forms.Label lbPuesto;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.PictureBox iconcerrar;
     }
 }
