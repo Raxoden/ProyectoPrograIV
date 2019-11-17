@@ -189,5 +189,18 @@ namespace FrontEnd
         {
             Application.Exit();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("aqui va el manual");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
