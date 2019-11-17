@@ -34,8 +34,10 @@
             this.btEliminar = new System.Windows.Forms.Button();
             this.btExportar = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnslide = new System.Windows.Forms.PictureBox();
             this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.tbContrasenna = new System.Windows.Forms.TextBox();
             this.cbPrivilegio = new System.Windows.Forms.CheckBox();
@@ -47,8 +49,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).BeginInit();
             this.BarraTitulo.SuspendLayout();
@@ -56,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btCrear
@@ -109,14 +113,22 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.pictureBox1);
             this.MenuVertical.Controls.Add(this.label4);
             this.MenuVertical.Controls.Add(this.btExportar);
             this.MenuVertical.Controls.Add(this.btEliminar);
             this.MenuVertical.Controls.Add(this.btCrear);
             this.MenuVertical.Controls.Add(this.btModificar);
+            this.MenuVertical.Controls.Add(this.shapeContainer1);
             resources.ApplyResources(this.MenuVertical, "MenuVertical");
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Name = "label4";
             // 
             // btnslide
             // 
@@ -135,6 +147,11 @@
             resources.ApplyResources(this.BarraTitulo, "BarraTitulo");
             this.BarraTitulo.Name = "BarraTitulo";
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
             // 
             // iconcerrar
             // 
@@ -228,16 +245,24 @@
             resources.ApplyResources(this.panelContenedor, "panelContenedor");
             this.panelContenedor.Name = "panelContenedor";
             // 
-            // label4
+            // pictureBox1
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
-            // label5
+            // shapeContainer1
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.shapeContainer1, "shapeContainer1");
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            resources.ApplyResources(this.lineShape1, "lineShape1");
+            this.lineShape1.Name = "lineShape1";
             // 
             // Administración
             // 
@@ -264,6 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,5 +315,8 @@
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
     }
 }

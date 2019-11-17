@@ -38,10 +38,10 @@
             this.lbPuesto = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,6 +63,7 @@
             // 
             this.tsUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             resources.ApplyResources(this.tsUsuario, "tsUsuario");
+            this.tsUsuario.ForeColor = System.Drawing.Color.White;
             this.tsUsuario.Name = "tsUsuario";
             this.tsUsuario.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -70,6 +71,7 @@
             // 
             this.tsColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             resources.ApplyResources(this.tsColaborador, "tsColaborador");
+            this.tsColaborador.ForeColor = System.Drawing.Color.White;
             this.tsColaborador.Name = "tsColaborador";
             this.tsColaborador.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
             // 
@@ -115,26 +117,26 @@
             this.lineShape1});
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
+            // lineShape4
             // 
-            this.lineShape1.Name = "lineShape1";
-            resources.ApplyResources(this.lineShape1, "lineShape1");
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            resources.ApplyResources(this.lineShape2, "lineShape2");
+            this.lineShape4.Name = "lineShape4";
+            resources.ApplyResources(this.lineShape4, "lineShape4");
+            this.lineShape4.Click += new System.EventHandler(this.lineShape4_Click);
             // 
             // lineShape3
             // 
             this.lineShape3.Name = "lineShape3";
             resources.ApplyResources(this.lineShape3, "lineShape3");
             // 
-            // lineShape4
+            // lineShape2
             // 
-            this.lineShape4.Name = "lineShape4";
-            resources.ApplyResources(this.lineShape4, "lineShape4");
-            this.lineShape4.Click += new System.EventHandler(this.lineShape4_Click);
+            this.lineShape2.Name = "lineShape2";
+            resources.ApplyResources(this.lineShape2, "lineShape2");
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            resources.ApplyResources(this.lineShape1, "lineShape1");
             // 
             // iconcerrar
             // 

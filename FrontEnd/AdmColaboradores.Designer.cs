@@ -56,12 +56,16 @@
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnslide = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             this.MenuVertical.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvColaboradores
@@ -73,7 +77,7 @@
             this.dgvColaboradores.ReadOnly = true;
             this.dgvColaboradores.RowHeadersWidth = 51;
             this.dgvColaboradores.RowTemplate.Height = 24;
-            this.dgvColaboradores.Size = new System.Drawing.Size(762, 223);
+            this.dgvColaboradores.Size = new System.Drawing.Size(762, 248);
             this.dgvColaboradores.TabIndex = 13;
             this.dgvColaboradores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColaboradores_CellClick);
             // 
@@ -225,7 +229,7 @@
             this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNacimiento.Location = new System.Drawing.Point(529, 23);
             this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(273, 20);
+            this.dtpNacimiento.Size = new System.Drawing.Size(262, 20);
             this.dtpNacimiento.TabIndex = 5;
             // 
             // dtpIngreso
@@ -234,7 +238,7 @@
             this.dtpIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpIngreso.Location = new System.Drawing.Point(505, 67);
             this.dtpIngreso.Name = "dtpIngreso";
-            this.dtpIngreso.Size = new System.Drawing.Size(297, 20);
+            this.dtpIngreso.Size = new System.Drawing.Size(286, 20);
             this.dtpIngreso.TabIndex = 6;
             // 
             // btCrear
@@ -248,7 +252,7 @@
             this.btCrear.ForeColor = System.Drawing.Color.White;
             this.btCrear.Image = ((System.Drawing.Image)(resources.GetObject("btCrear.Image")));
             this.btCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btCrear.Location = new System.Drawing.Point(3, 114);
+            this.btCrear.Location = new System.Drawing.Point(0, 144);
             this.btCrear.Name = "btCrear";
             this.btCrear.Size = new System.Drawing.Size(250, 40);
             this.btCrear.TabIndex = 9;
@@ -267,7 +271,7 @@
             this.btModificar.ForeColor = System.Drawing.Color.White;
             this.btModificar.Image = ((System.Drawing.Image)(resources.GetObject("btModificar.Image")));
             this.btModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btModificar.Location = new System.Drawing.Point(-3, 180);
+            this.btModificar.Location = new System.Drawing.Point(3, 191);
             this.btModificar.Name = "btModificar";
             this.btModificar.Size = new System.Drawing.Size(250, 40);
             this.btModificar.TabIndex = 10;
@@ -286,7 +290,7 @@
             this.btEliminar.ForeColor = System.Drawing.Color.White;
             this.btEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btEliminar.Image")));
             this.btEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btEliminar.Location = new System.Drawing.Point(0, 245);
+            this.btEliminar.Location = new System.Drawing.Point(0, 248);
             this.btEliminar.Name = "btEliminar";
             this.btEliminar.Size = new System.Drawing.Size(250, 40);
             this.btEliminar.TabIndex = 11;
@@ -297,10 +301,12 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.pictureBox1);
             this.MenuVertical.Controls.Add(this.label9);
             this.MenuVertical.Controls.Add(this.btEliminar);
             this.MenuVertical.Controls.Add(this.btCrear);
             this.MenuVertical.Controls.Add(this.btModificar);
+            this.MenuVertical.Controls.Add(this.shapeContainer1);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
@@ -397,6 +403,36 @@
             this.panel1.Size = new System.Drawing.Size(813, 466);
             this.panel1.TabIndex = 18;
             // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(250, 511);
+            this.shapeContainer1.TabIndex = 15;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.Color.White;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 44;
+            this.lineShape1.X2 = 201;
+            this.lineShape1.Y1 = 423;
+            this.lineShape1.Y2 = 423;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(90, 443);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(51, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // AdmColaboradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +460,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,5 +494,8 @@
         private System.Windows.Forms.PictureBox iconcerrar;
         private System.Windows.Forms.PictureBox btnslide;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
     }
 }
