@@ -48,6 +48,7 @@
             this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.tbUsuario, "tbUsuario");
+            this.tbUsuario.ForeColor = System.Drawing.Color.DarkGray;
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUsuario_KeyPress);
             // 
@@ -56,6 +57,7 @@
             this.tbContrasenna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.tbContrasenna.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.tbContrasenna, "tbContrasenna");
+            this.tbContrasenna.ForeColor = System.Drawing.Color.DarkGray;
             this.tbContrasenna.Name = "tbContrasenna";
             // 
             // button1
