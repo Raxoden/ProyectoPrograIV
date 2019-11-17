@@ -49,20 +49,29 @@
             this.btCrear = new System.Windows.Forms.Button();
             this.btModificar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
-            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
+            this.MenuVertical = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.iconcerrar = new System.Windows.Forms.PictureBox();
+            this.btnslide = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
+            this.MenuVertical.SuspendLayout();
+            this.BarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnslide)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvColaboradores
             // 
             this.dgvColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvColaboradores.Location = new System.Drawing.Point(12, 252);
+            this.dgvColaboradores.Location = new System.Drawing.Point(286, 258);
             this.dgvColaboradores.MultiSelect = false;
             this.dgvColaboradores.Name = "dgvColaboradores";
             this.dgvColaboradores.ReadOnly = true;
             this.dgvColaboradores.RowHeadersWidth = 51;
             this.dgvColaboradores.RowTemplate.Height = 24;
-            this.dgvColaboradores.Size = new System.Drawing.Size(776, 231);
+            this.dgvColaboradores.Size = new System.Drawing.Size(750, 223);
             this.dgvColaboradores.TabIndex = 13;
             this.dgvColaboradores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColaboradores_CellClick);
             // 
@@ -70,9 +79,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(35, 20);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label1.Location = new System.Drawing.Point(269, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "ID(Cédula):";
             // 
@@ -80,9 +90,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(52, 68);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label2.Location = new System.Drawing.Point(290, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(72, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre:";
             // 
@@ -90,9 +101,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(54, 116);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label3.Location = new System.Drawing.Point(292, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Genero:";
             // 
@@ -100,9 +112,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(69, 164);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label4.Location = new System.Drawing.Point(311, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Edad:";
             // 
@@ -110,9 +123,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(360, 20);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label5.Location = new System.Drawing.Point(627, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.Size = new System.Drawing.Size(147, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha Nacimiento:";
             // 
@@ -120,9 +134,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(383, 68);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label6.Location = new System.Drawing.Point(627, 109);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 13);
+            this.label6.Size = new System.Drawing.Size(118, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "Fecha Ingreso:";
             // 
@@ -130,9 +145,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(443, 116);
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label7.Location = new System.Drawing.Point(627, 159);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(49, 20);
             this.label7.TabIndex = 7;
             this.label7.Text = "Area:";
             // 
@@ -140,15 +156,16 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Location = new System.Drawing.Point(429, 164);
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label8.Location = new System.Drawing.Point(627, 207);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.Size = new System.Drawing.Size(62, 20);
             this.label8.TabIndex = 8;
             this.label8.Text = "Puesto:";
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(120, 17);
+            this.tbID.Location = new System.Drawing.Point(368, 59);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(226, 20);
             this.tbID.TabIndex = 1;
@@ -156,7 +173,7 @@
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(120, 65);
+            this.tbNombre.Location = new System.Drawing.Point(368, 111);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(226, 20);
             this.tbNombre.TabIndex = 2;
@@ -164,7 +181,7 @@
             // 
             // tbEdad
             // 
-            this.tbEdad.Location = new System.Drawing.Point(120, 161);
+            this.tbEdad.Location = new System.Drawing.Point(368, 207);
             this.tbEdad.Name = "tbEdad";
             this.tbEdad.Size = new System.Drawing.Size(226, 20);
             this.tbEdad.TabIndex = 4;
@@ -173,7 +190,7 @@
             // cbGenero
             // 
             this.cbGenero.FormattingEnabled = true;
-            this.cbGenero.Location = new System.Drawing.Point(120, 113);
+            this.cbGenero.Location = new System.Drawing.Point(368, 159);
             this.cbGenero.Name = "cbGenero";
             this.cbGenero.Size = new System.Drawing.Size(226, 21);
             this.cbGenero.TabIndex = 3;
@@ -182,7 +199,7 @@
             // cbArea
             // 
             this.cbArea.FormattingEnabled = true;
-            this.cbArea.Location = new System.Drawing.Point(491, 113);
+            this.cbArea.Location = new System.Drawing.Point(739, 159);
             this.cbArea.MinimumSize = new System.Drawing.Size(297, 0);
             this.cbArea.Name = "cbArea";
             this.cbArea.Size = new System.Drawing.Size(297, 21);
@@ -193,7 +210,7 @@
             // cbPuesto
             // 
             this.cbPuesto.FormattingEnabled = true;
-            this.cbPuesto.Location = new System.Drawing.Point(491, 161);
+            this.cbPuesto.Location = new System.Drawing.Point(739, 207);
             this.cbPuesto.MinimumSize = new System.Drawing.Size(297, 0);
             this.cbPuesto.Name = "cbPuesto";
             this.cbPuesto.Size = new System.Drawing.Size(297, 21);
@@ -204,25 +221,34 @@
             // 
             this.dtpNacimiento.CustomFormat = "";
             this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNacimiento.Location = new System.Drawing.Point(491, 15);
+            this.dtpNacimiento.Location = new System.Drawing.Point(778, 63);
             this.dtpNacimiento.Name = "dtpNacimiento";
-            this.dtpNacimiento.Size = new System.Drawing.Size(297, 20);
+            this.dtpNacimiento.Size = new System.Drawing.Size(273, 20);
             this.dtpNacimiento.TabIndex = 5;
             // 
             // dtpIngreso
             // 
             this.dtpIngreso.CustomFormat = "";
             this.dtpIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpIngreso.Location = new System.Drawing.Point(491, 63);
+            this.dtpIngreso.Location = new System.Drawing.Point(754, 111);
             this.dtpIngreso.Name = "dtpIngreso";
             this.dtpIngreso.Size = new System.Drawing.Size(297, 20);
             this.dtpIngreso.TabIndex = 6;
             // 
             // btCrear
             // 
-            this.btCrear.Location = new System.Drawing.Point(159, 200);
+            this.btCrear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btCrear.FlatAppearance.BorderSize = 0;
+            this.btCrear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btCrear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCrear.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btCrear.ForeColor = System.Drawing.Color.White;
+            this.btCrear.Image = ((System.Drawing.Image)(resources.GetObject("btCrear.Image")));
+            this.btCrear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btCrear.Location = new System.Drawing.Point(3, 114);
             this.btCrear.Name = "btCrear";
-            this.btCrear.Size = new System.Drawing.Size(107, 46);
+            this.btCrear.Size = new System.Drawing.Size(250, 40);
             this.btCrear.TabIndex = 9;
             this.btCrear.Text = "Crear";
             this.btCrear.UseVisualStyleBackColor = true;
@@ -230,9 +256,18 @@
             // 
             // btModificar
             // 
-            this.btModificar.Location = new System.Drawing.Point(362, 200);
+            this.btModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btModificar.FlatAppearance.BorderSize = 0;
+            this.btModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btModificar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btModificar.ForeColor = System.Drawing.Color.White;
+            this.btModificar.Image = ((System.Drawing.Image)(resources.GetObject("btModificar.Image")));
+            this.btModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btModificar.Location = new System.Drawing.Point(-3, 180);
             this.btModificar.Name = "btModificar";
-            this.btModificar.Size = new System.Drawing.Size(107, 46);
+            this.btModificar.Size = new System.Drawing.Size(250, 40);
             this.btModificar.TabIndex = 10;
             this.btModificar.Text = "Modificar";
             this.btModificar.UseVisualStyleBackColor = true;
@@ -240,30 +275,106 @@
             // 
             // btEliminar
             // 
-            this.btEliminar.Location = new System.Drawing.Point(565, 200);
+            this.btEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btEliminar.FlatAppearance.BorderSize = 0;
+            this.btEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btEliminar.ForeColor = System.Drawing.Color.White;
+            this.btEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btEliminar.Image")));
+            this.btEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btEliminar.Location = new System.Drawing.Point(0, 245);
             this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(107, 46);
+            this.btEliminar.Size = new System.Drawing.Size(250, 40);
             this.btEliminar.TabIndex = 11;
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = true;
             this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
-            // skinEngine1
+            // MenuVertical
             // 
-            this.skinEngine1.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA==";
-            this.skinEngine1.SkinFile = "C:\\Users\\pc\\Downloads\\Componentes Graficos Vb2\\SKIN NET 2010 WIN 7\\SkinVS.NET\\MSN" +
-    "\\MSN.ssk";
-            this.skinEngine1.SkinStreamMain = ((System.IO.Stream)(resources.GetObject("skinEngine1.SkinStreamMain")));
+            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.MenuVertical.Controls.Add(this.label9);
+            this.MenuVertical.Controls.Add(this.btEliminar);
+            this.MenuVertical.Controls.Add(this.btCrear);
+            this.MenuVertical.Controls.Add(this.btModificar);
+            this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MenuVertical.Location = new System.Drawing.Point(0, 0);
+            this.MenuVertical.Name = "MenuVertical";
+            this.MenuVertical.Size = new System.Drawing.Size(250, 511);
+            this.MenuVertical.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(5, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(239, 20);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "MUNICIPALIDAD SAN JOSE";
+            // 
+            // BarraTitulo
+            // 
+            this.BarraTitulo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BarraTitulo.Controls.Add(this.label10);
+            this.BarraTitulo.Controls.Add(this.iconcerrar);
+            this.BarraTitulo.Controls.Add(this.btnslide);
+            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BarraTitulo.Location = new System.Drawing.Point(250, 0);
+            this.BarraTitulo.Name = "BarraTitulo";
+            this.BarraTitulo.Size = new System.Drawing.Size(813, 45);
+            this.BarraTitulo.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(318, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(239, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "ADMINISTACIÓN DE COLABORADORES";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // iconcerrar
+            // 
+            this.iconcerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconcerrar.Image = ((System.Drawing.Image)(resources.GetObject("iconcerrar.Image")));
+            this.iconcerrar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.iconcerrar.Location = new System.Drawing.Point(793, 0);
+            this.iconcerrar.Name = "iconcerrar";
+            this.iconcerrar.Size = new System.Drawing.Size(20, 20);
+            this.iconcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconcerrar.TabIndex = 16;
+            this.iconcerrar.TabStop = false;
+            this.iconcerrar.Click += new System.EventHandler(this.iconcerrar_Click);
+            // 
+            // btnslide
+            // 
+            this.btnslide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnslide.Image = ((System.Drawing.Image)(resources.GetObject("btnslide.Image")));
+            this.btnslide.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnslide.Location = new System.Drawing.Point(0, -2);
+            this.btnslide.Name = "btnslide";
+            this.btnslide.Size = new System.Drawing.Size(35, 35);
+            this.btnslide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnslide.TabIndex = 15;
+            this.btnslide.TabStop = false;
             // 
             // AdmColaboradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 495);
-            this.Controls.Add(this.btEliminar);
-            this.Controls.Add(this.btModificar);
-            this.Controls.Add(this.btCrear);
+            this.ClientSize = new System.Drawing.Size(1063, 511);
+            this.Controls.Add(this.BarraTitulo);
+            this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.dtpIngreso);
             this.Controls.Add(this.dtpNacimiento);
             this.Controls.Add(this.cbPuesto);
@@ -290,6 +401,12 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdmColaboradores_FormClosing);
             this.Load += new System.EventHandler(this.AdmColaboradores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
+            this.MenuVertical.ResumeLayout(false);
+            this.MenuVertical.PerformLayout();
+            this.BarraTitulo.ResumeLayout(false);
+            this.BarraTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnslide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,6 +434,11 @@
         private System.Windows.Forms.Button btCrear;
         private System.Windows.Forms.Button btModificar;
         private System.Windows.Forms.Button btEliminar;
-        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
+        private System.Windows.Forms.Panel MenuVertical;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel BarraTitulo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox iconcerrar;
+        private System.Windows.Forms.PictureBox btnslide;
     }
 }

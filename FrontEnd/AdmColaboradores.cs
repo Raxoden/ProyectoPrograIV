@@ -176,5 +176,15 @@ namespace FrontEnd
             cbArea.Text = dgvColaboradores.CurrentRow.Cells[7].Value.ToString();
             cbPuesto.Text = dgvColaboradores.CurrentRow.Cells[6].Value.ToString();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
