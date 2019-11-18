@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd;
+using System.Runtime.InteropServices;
 
 namespace FrontEnd
 {
@@ -28,6 +29,11 @@ namespace FrontEnd
         }
         
         //Se cargan los data grid views y se definen las fechas minima y maxima. 
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void AdmColaboradores_Load(object sender, EventArgs e)
         {
             dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
@@ -47,7 +53,8 @@ namespace FrontEnd
             if (String.IsNullOrEmpty(tbID.Text) || String.IsNullOrEmpty(tbNombre.Text) || String.IsNullOrEmpty(tbEdad.Text))
             {
                 return false;
-            } else
+            }
+            else
             {
                 return true;
             }
@@ -70,12 +77,14 @@ namespace FrontEnd
                     fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbID.Text), 1);
                     dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
                     MessageBox.Show("El colaborador se registro exitosamente.");
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Hubo un error al registrar el colaborador.");
                 }
-                
-            } else
+
+            }
+            else
             {
                 MessageBox.Show("Debe de llenar todos los campos");
             }
@@ -191,6 +200,45 @@ namespace FrontEnd
             dtpIngreso.Value = Convert.ToDateTime(dgvColaboradores.CurrentRow.Cells[5].Value);
             cbArea.Text = dgvColaboradores.CurrentRow.Cells[7].Value.ToString();
             cbPuesto.Text = dgvColaboradores.CurrentRow.Cells[6].Value.ToString();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
+
+        private void btnslide_Click(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 250)
+            {
+                MenuVertical.Width = 70;
+            }
+            else
+                MenuVertical.Width = 250;
+        }
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("aqui va el manual");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ namespace FrontEnd
         /// </summary>
         FuncionesDB fdb = new FuncionesDB();
         AdmColaboradores ac;
-        AdmUsuarios au;
+        Administración au;
         BackEnd.Usuario Usuario;
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace FrontEnd
         {
             Usuario = fdb.BusquedaUsuario(ID_Usuario);
             ac = new AdmColaboradores(Usuario);
-            au = new AdmUsuarios(Usuario);
+            au = new Administración(Usuario);
             InitializeComponent();
         }
 
@@ -101,6 +101,21 @@ namespace FrontEnd
             au.Dispose();
             ac.Dispose();
             fdb.registrarSalida(Usuario.ID_Usuario);
+            Application.Exit();
+        }
+
+        private void lineShape4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPuesto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
             Application.Exit();
         }
     }

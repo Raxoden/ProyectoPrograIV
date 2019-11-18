@@ -8,15 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd;
+using System.Runtime.InteropServices;
+
 
 namespace FrontEnd
 {
-    public partial class AdmUsuarios : Form
+    public partial class Administración : Form
     {
         /**
          * fdb = es la variable para instanciar a las funciones de la aplicacion.
          * Usuario = la variable para obtener y modificar la informacion del usuario.
          */
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         FuncionesDB fdb = new FuncionesDB();
         Usuario Usuario;
         /// <summary>
@@ -173,6 +180,45 @@ namespace FrontEnd
         {
             fdb.registrarEvento(Usuario.ID_Usuario, 0, 7);
             fdb.ExportarExcel();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnslide_Click(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 250)
+            {
+                MenuVertical.Width = 70;
+            }
+            else
+                MenuVertical.Width = 250;
+        }
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("aqui va el manual");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
