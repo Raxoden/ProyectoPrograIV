@@ -17,7 +17,6 @@ namespace DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Colaborador()
         {
-            this.Reporte = new HashSet<Reporte>();
             this.Usuario = new HashSet<Usuario>();
         }
     
@@ -32,8 +31,6 @@ namespace DataBase
     
         public virtual Area Area { get; set; }
         public virtual Puesto Puesto { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reporte> Reporte { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuario { get; set; }
     }

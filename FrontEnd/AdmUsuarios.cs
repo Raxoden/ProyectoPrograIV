@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd;
+using System.Runtime.InteropServices;
+
 
 namespace FrontEnd
 {
@@ -17,14 +19,21 @@ namespace FrontEnd
          * fdb = es la variable para instanciar a las funciones de la aplicacion.
          * Usuario = la variable para obtener y modificar la informacion del usuario.
          */
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
         FuncionesDB fdb = new FuncionesDB();
         Usuario Usuario;
+        Form menu;
         /// <summary>
         /// En el constructor se asigna la informacion a un usuario.
         /// </summary>
         /// <param name="Usuario">Se obtiene el usuario.</param>
-        public AdmUsuarios(Usuario Usuario)
+        public AdmUsuarios(Usuario Usuario, Form Men)
         {
+            menu = Men;
             this.Usuario = Usuario;
             InitializeComponent();
         }
@@ -48,8 +57,8 @@ namespace FrontEnd
         {
             try
             {
-                tbId.Text = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
-                if (Convert.ToBoolean(dgvUsuarios.CurrentRow.Cells[4].Value))
+                tbId.Text = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();
+                if (Convert.ToBoolean(dgvUsuarios.CurrentRow.Cells[5].Value))
                 {
                     cbPrivilegio.Checked = true;
                 }
@@ -70,7 +79,7 @@ namespace FrontEnd
         {
             if (String.IsNullOrEmpty(tbId.Text) || String.IsNullOrEmpty(tbContrasenna.Text) || String.IsNullOrEmpty(tbConfirmar.Text))
             {
-                MessageBox.Show("Todos los espacios deben ser llenados.");
+                MessageBox.Show("Todos los espacios deben ser completados.");
                 return false;
             }
             else
@@ -158,14 +167,7 @@ namespace FrontEnd
         //Evita que se digiten letras y solo permite numeros y borrar.
         private void tbId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Char.IsDigit(e.KeyChar) && tbId.Text.Length <= 8) || e.KeyChar == Convert.ToChar(Keys.Back))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            e.Handled = true;
         }
 
         //Exporta la informacion a un excel.
@@ -173,6 +175,50 @@ namespace FrontEnd
         {
             fdb.registrarEvento(Usuario.ID_Usuario, 0, 7);
             fdb.ExportarExcel();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnslide_Click(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 250)
+            {
+                MenuVertical.Width = 70;
+            }
+            else
+                MenuVertical.Width = 250;
+        }
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            menu.Visible = true;
+            this.Dispose();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(System.IO.Path.Combine(Application.StartupPath, "Manual_de_Usuario.pdf"));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El manual no se ha encontrado, esposible que haya sido eliminado");
+            }
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

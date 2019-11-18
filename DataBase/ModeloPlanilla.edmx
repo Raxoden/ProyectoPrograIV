@@ -105,19 +105,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reporte__ID_Cola__1BC821DD">
-          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
-          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Colaborador">
-              <PropertyRef Name="ID_Colaborador" />
-            </Principal>
-            <Dependent Role="Reporte">
-              <PropertyRef Name="ID_Colaborador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Reporte__ID_Even__19DFD96B">
+        <Association Name="FK__Reporte__ID_Even__2180FB33">
           <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
           <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
           <ReferentialConstraint>
@@ -129,7 +117,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reporte__ID_Usua__1AD3FDA4">
+        <Association Name="FK__Reporte__ID_Usua__22751F6C">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
           <ReferentialConstraint>
@@ -173,15 +161,11 @@
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reporte__ID_Cola__1BC821DD" Association="Self.FK__Reporte__ID_Cola__1BC821DD">
-            <End Role="Colaborador" EntitySet="Colaborador" />
-            <End Role="Reporte" EntitySet="Reporte" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Reporte__ID_Even__19DFD96B" Association="Self.FK__Reporte__ID_Even__19DFD96B">
+          <AssociationSet Name="FK__Reporte__ID_Even__2180FB33" Association="Self.FK__Reporte__ID_Even__2180FB33">
             <End Role="Evento" EntitySet="Evento" />
             <End Role="Reporte" EntitySet="Reporte" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reporte__ID_Usua__1AD3FDA4" Association="Self.FK__Reporte__ID_Usua__1AD3FDA4">
+          <AssociationSet Name="FK__Reporte__ID_Usua__22751F6C" Association="Self.FK__Reporte__ID_Usua__22751F6C">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Reporte" EntitySet="Reporte" />
           </AssociationSet>
@@ -228,7 +212,6 @@
           <Property Name="ID_Area" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Area" Relationship="Self.FK__Colaborad__ID_Ar__14270015" FromRole="Colaborador" ToRole="Area" />
           <NavigationProperty Name="Puesto" Relationship="Self.FK__Colaborad__ID_Pu__1332DBDC" FromRole="Colaborador" ToRole="Puesto" />
-          <NavigationProperty Name="Reporte" Relationship="Self.FK__Reporte__ID_Cola__1BC821DD" FromRole="Colaborador" ToRole="Reporte" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__ID_Cola__17036CC0" FromRole="Colaborador" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Evento">
@@ -237,7 +220,7 @@
           </Key>
           <Property Name="ID_Evento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Reporte" Relationship="Self.FK__Reporte__ID_Even__19DFD96B" FromRole="Evento" ToRole="Reporte" />
+          <NavigationProperty Name="Reporte" Relationship="Self.FK__Reporte__ID_Even__2180FB33" FromRole="Evento" ToRole="Reporte" />
         </EntityType>
         <EntityType Name="Puesto">
           <Key>
@@ -257,9 +240,8 @@
           <Property Name="ID_Evento" Type="Int32" Nullable="false" />
           <Property Name="ID_Usuario" Type="Int32" Nullable="false" />
           <Property Name="ID_Colaborador" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Colaborador" Relationship="Self.FK__Reporte__ID_Cola__1BC821DD" FromRole="Reporte" ToRole="Colaborador" />
-          <NavigationProperty Name="Evento" Relationship="Self.FK__Reporte__ID_Even__19DFD96B" FromRole="Reporte" ToRole="Evento" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK__Reporte__ID_Usua__1AD3FDA4" FromRole="Reporte" ToRole="Usuario" />
+          <NavigationProperty Name="Evento" Relationship="Self.FK__Reporte__ID_Even__2180FB33" FromRole="Reporte" ToRole="Evento" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Reporte__ID_Usua__22751F6C" FromRole="Reporte" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -271,7 +253,7 @@
           <Property Name="Privilegios" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bitacora" Relationship="Self.FK__Bitacora__ID_Usu__1EA48E88" FromRole="Usuario" ToRole="Bitacora" />
           <NavigationProperty Name="Colaborador" Relationship="Self.FK__Usuario__ID_Cola__17036CC0" FromRole="Usuario" ToRole="Colaborador" />
-          <NavigationProperty Name="Reporte" Relationship="Self.FK__Reporte__ID_Usua__1AD3FDA4" FromRole="Usuario" ToRole="Reporte" />
+          <NavigationProperty Name="Reporte" Relationship="Self.FK__Reporte__ID_Usua__22751F6C" FromRole="Usuario" ToRole="Reporte" />
         </EntityType>
         <Association Name="FK__Colaborad__ID_Ar__14270015">
           <End Role="Area" Type="Self.Area" Multiplicity="1" />
@@ -309,18 +291,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reporte__ID_Cola__1BC821DD">
-          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
-          <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Colaborador">
-              <PropertyRef Name="ID_Colaborador" />
-            </Principal>
-            <Dependent Role="Reporte">
-              <PropertyRef Name="ID_Colaborador" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Usuario__ID_Cola__17036CC0">
           <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
@@ -333,7 +303,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reporte__ID_Even__19DFD96B">
+        <Association Name="FK__Reporte__ID_Even__2180FB33">
           <End Role="Evento" Type="Self.Evento" Multiplicity="1" />
           <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
           <ReferentialConstraint>
@@ -345,7 +315,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reporte__ID_Usua__1AD3FDA4">
+        <Association Name="FK__Reporte__ID_Usua__22751F6C">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Reporte" Type="Self.Reporte" Multiplicity="*" />
           <ReferentialConstraint>
@@ -377,19 +347,15 @@
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Colaborador" EntitySet="Colaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reporte__ID_Cola__1BC821DD" Association="Self.FK__Reporte__ID_Cola__1BC821DD">
-            <End Role="Colaborador" EntitySet="Colaborador" />
-            <End Role="Reporte" EntitySet="Reporte" />
-          </AssociationSet>
           <AssociationSet Name="FK__Usuario__ID_Cola__17036CC0" Association="Self.FK__Usuario__ID_Cola__17036CC0">
             <End Role="Colaborador" EntitySet="Colaborador" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reporte__ID_Even__19DFD96B" Association="Self.FK__Reporte__ID_Even__19DFD96B">
+          <AssociationSet Name="FK__Reporte__ID_Even__2180FB33" Association="Self.FK__Reporte__ID_Even__2180FB33">
             <End Role="Evento" EntitySet="Evento" />
             <End Role="Reporte" EntitySet="Reporte" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reporte__ID_Usua__1AD3FDA4" Association="Self.FK__Reporte__ID_Usua__1AD3FDA4">
+          <AssociationSet Name="FK__Reporte__ID_Usua__22751F6C" Association="Self.FK__Reporte__ID_Usua__22751F6C">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Reporte" EntitySet="Reporte" />
           </AssociationSet>

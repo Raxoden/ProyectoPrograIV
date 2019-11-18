@@ -37,8 +37,6 @@ namespace FrontEnd
         public Menu(int ID_Usuario)
         {
             Usuario = fdb.BusquedaUsuario(ID_Usuario);
-            ac = new AdmColaboradores(Usuario);
-            au = new AdmUsuarios(Usuario);
             InitializeComponent();
         }
 
@@ -65,10 +63,9 @@ namespace FrontEnd
         /// </summary>
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!au.Visible)
-            {
-                au.Visible = true;
-            }
+            au = new AdmUsuarios(Usuario, this);
+            au.Show();
+            this.Visible = false;
         }
 
         /// <summary>
@@ -77,10 +74,9 @@ namespace FrontEnd
         /// </summary>
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!ac.Visible)
-            {
-                ac.Visible = true;
-            }
+            ac = new AdmColaboradores(Usuario, this);
+            ac.Show();
+            this.Visible = false;
         }
 
         /// <summary>
@@ -91,6 +87,9 @@ namespace FrontEnd
             if (MessageBox.Show("Si cierra esta ventana cerrara el programa", "Aviso!", MessageBoxButtons.YesNo) != DialogResult.Yes)
             {
                 e.Cancel = true;
+            } else
+            {
+                Application.Exit();
             }
         }
         /// <summary>
@@ -98,9 +97,22 @@ namespace FrontEnd
         /// </summary>
         private void Menu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            au.Dispose();
-            ac.Dispose();
             fdb.registrarSalida(Usuario.ID_Usuario);
+            Application.Exit();
+        }
+
+        private void lineShape4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbPuesto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
             Application.Exit();
         }
     }

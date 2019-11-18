@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BackEnd;
+using System.Runtime.InteropServices;
 
 namespace FrontEnd
 {
@@ -19,17 +20,30 @@ namespace FrontEnd
          */
         FuncionesDB fdb = new FuncionesDB();
         Usuario Usuario;
-
+        Form menu;
         //En el constructor se obtiene el usuario.
-        public AdmColaboradores(Usuario Usuario)
+        public AdmColaboradores(Usuario Usuario, Form Men)
         {
+            menu = Men;
             InitializeComponent();
             this.Usuario = Usuario;
         }
         
         //Se cargan los data grid views y se definen las fechas minima y maxima. 
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void AdmColaboradores_Load(object sender, EventArgs e)
         {
+            dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
+            cbArea.DataSource = fdb.BusquedaArea(Usuario);
+            cbGenero.DataSource = fdb.BusquedaGenero();
+            dtpIngreso.MaxDate = System.DateTime.Now;
+            dtpNacimiento.MaxDate = System.DateTime.Now.AddYears(-18);
+            dtpIngreso.MinDate = System.DateTime.Now.AddYears(-100);
+            dtpNacimiento.MinDate = System.DateTime.Now.AddYears(-100);
         }
 
         /// <summary>
@@ -40,7 +54,8 @@ namespace FrontEnd
             if (String.IsNullOrEmpty(tbID.Text) || String.IsNullOrEmpty(tbNombre.Text) || String.IsNullOrEmpty(tbEdad.Text))
             {
                 return false;
-            } else
+            }
+            else
             {
                 return true;
             }
@@ -63,12 +78,14 @@ namespace FrontEnd
                     fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbID.Text), 1);
                     dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
                     MessageBox.Show("El colaborador se registro exitosamente.");
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Hubo un error al registrar el colaborador.");
                 }
-                
-            } else
+
+            }
+            else
             {
                 MessageBox.Show("Debe de llenar todos los campos");
             }
@@ -186,15 +203,43 @@ namespace FrontEnd
             cbPuesto.Text = dgvColaboradores.CurrentRow.Cells[6].Value.ToString();
         }
 
-        private void AdmColaboradores_Shown(object sender, EventArgs e)
+        private void label10_Click(object sender, EventArgs e)
         {
-            dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
-            cbArea.DataSource = fdb.BusquedaArea(Usuario);
-            cbGenero.DataSource = fdb.BusquedaGenero();
-            dtpIngreso.MaxDate = System.DateTime.Now;
-            dtpNacimiento.MaxDate = System.DateTime.Now.AddYears(-18);
-            dtpIngreso.MinDate = System.DateTime.Now.AddYears(-100);
-            dtpNacimiento.MinDate = System.DateTime.Now.AddYears(-100);
+
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            menu.Visible = true;
+            this.Dispose();
+        }
+
+        private void btnslide_Click(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 250)
+            {
+                MenuVertical.Width = 70;
+            }
+            else
+                MenuVertical.Width = 250;
+        }
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(System.IO.Path.Combine(Application.StartupPath, "Manual_de_Usuario.pdf"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El manual no se ha encontrado, esposible que haya sido eliminado: " + ex.Message);
+            }
         }
     }
 }

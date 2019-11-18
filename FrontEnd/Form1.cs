@@ -75,5 +75,19 @@ namespace FrontEnd
             }
         }
 
+        private void tbContrasenna_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconcerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
