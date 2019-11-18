@@ -79,7 +79,7 @@ namespace FrontEnd
         {
             if (String.IsNullOrEmpty(tbId.Text) || String.IsNullOrEmpty(tbContrasenna.Text) || String.IsNullOrEmpty(tbConfirmar.Text))
             {
-                MessageBox.Show("Todos los espacios deben ser llenados.");
+                MessageBox.Show("Todos los espacios deben ser completados.");
                 return false;
             }
             else
