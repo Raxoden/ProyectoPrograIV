@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 
 namespace FrontEnd
 {
-    public partial class Administración : Form
+    public partial class AdmUsuarios : Form
     {
         /**
          * fdb = es la variable para instanciar a las funciones de la aplicacion.
@@ -26,12 +26,14 @@ namespace FrontEnd
 
         FuncionesDB fdb = new FuncionesDB();
         Usuario Usuario;
+        Form menu;
         /// <summary>
         /// En el constructor se asigna la informacion a un usuario.
         /// </summary>
         /// <param name="Usuario">Se obtiene el usuario.</param>
-        public AdmUsuarios(Usuario Usuario)
+        public AdmUsuarios(Usuario Usuario, Form Men)
         {
+            menu = Men;
             this.Usuario = Usuario;
             InitializeComponent();
         }
@@ -205,7 +207,8 @@ namespace FrontEnd
 
         private void iconcerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            menu.Visible = true;
+            this.Dispose();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -216,7 +219,6 @@ namespace FrontEnd
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

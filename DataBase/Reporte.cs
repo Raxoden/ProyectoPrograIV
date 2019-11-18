@@ -21,7 +21,6 @@ namespace DataBase
         public int ID_Usuario { get; set; }
         public int ID_Colaborador { get; set; }
     
-        public virtual Colaborador Colaborador { get; set; }
         public virtual Evento Evento { get; set; }
         public virtual Usuario Usuario { get; set; }
     }

@@ -20,10 +20,11 @@ namespace FrontEnd
          */
         FuncionesDB fdb = new FuncionesDB();
         Usuario Usuario;
-
+        Form menu;
         //En el constructor se obtiene el usuario.
-        public AdmColaboradores(Usuario Usuario)
+        public AdmColaboradores(Usuario Usuario, Form Men)
         {
+            menu = Men;
             InitializeComponent();
             this.Usuario = Usuario;
         }
@@ -209,7 +210,8 @@ namespace FrontEnd
 
         private void iconcerrar_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            menu.Visible = true;
+            this.Dispose();
         }
 
         private void btnslide_Click(object sender, EventArgs e)

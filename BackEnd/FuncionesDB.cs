@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -617,8 +618,8 @@ namespace BackEnd
                 tbl = slDocumento.CreateTable("R1", "S" + indxFila);
                 tbl.SetTableStyle(SLTableStyleTypeValues.Medium1);
                 slDocumento.InsertTable(tbl);
-
                 slDocumento.AutoFitColumn("A", "S");
+
                 slDocumento.SaveAs(@"C:\Users\andre\Desktop\ListadoColaboradores.xlsx");
                 MessageBox.Show("Datos exportados exitosamente al documento 'ListadoColaboradores.xlsx'");
             }
