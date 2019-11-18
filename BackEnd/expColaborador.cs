@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
+    /// <summary>
+    /// Clase utilizada para manejar y exportar los datos originales de Colaborador
+    /// </summary>
     class expColaborador
     {
         public int ID_Colaborador { get; set; }

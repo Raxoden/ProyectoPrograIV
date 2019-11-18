@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
+    /// <summary>
+    /// Clase utilizada para manejar y exportar los datos originales de Usuario
+    /// </summary>
     class expUsuario
     {
         public int ID_Usuario { get; set; }

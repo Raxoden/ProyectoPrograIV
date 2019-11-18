@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BackEnd
 {
+    /// <summary>
+    /// Clase utilizada para manipular y mostrar facilmente los datos de Colaborador
+    /// </summary>
     public class Usuario
     {
         public int ID_Usuario { get; set; }
