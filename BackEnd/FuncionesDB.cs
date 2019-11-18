@@ -9,8 +9,17 @@ using SpreadsheetLight;
 
 namespace BackEnd
 {
+    /// <summary>
+    /// Clase que contiene las funciones de la aplicacion.
+    /// </summary>
     public class FuncionesDB
     {
+        /// <summary>
+        /// Comprueba el usuario y la contraseña para dar acceso a la aplicacion.
+        /// </summary>
+        /// <param name="us">Obtene el id del colaborador usado como identificador.</param>
+        /// <param name="pa">Obtiene la contraseña.</param>
+        /// <returns></returns>
         public Boolean Validacion(int us, string pa)
         {
             try
@@ -39,6 +48,11 @@ namespace BackEnd
                 return false;
             }
         }
+        /// <summary>
+        /// Busca a un colaborador por su id para obtener su informacion.
+        /// </summary>
+        /// <param name="ID">Obtiene el id del colaborador.</param>
+        /// <returns>Devuelve un objeto para manipular y mostrar la informacion del colaborador</returns>
         public Colaborador BusquedaColaborador(int ID)
         {
             try
@@ -69,6 +83,12 @@ namespace BackEnd
                 return null;
             }
         }
+
+        /// <summary>
+        /// Busca a un usuario por su id para obtener su informacion.
+        /// </summary>
+        /// <param name="ID">Obtiene el id del usuario.</param>
+        /// <returns>Devuelve un objeto para manipular y mostrar la informacion del usuario</returns>
         public Usuario BusquedaUsuario(int ID)
         {
             try
@@ -98,7 +118,11 @@ namespace BackEnd
                 return null;
             }
         }
-        public List<Colaborador> ConsultaGerentes(Usuario us)
+        /// <summary>
+        /// Busca los gerentes de cada area.
+        /// </summary>
+        /// <returns>Devuelve la lista de los gerentes de cada area.</returns>
+        public List<Colaborador> ConsultaGerentes()
         {
             try
             {
@@ -128,6 +152,12 @@ namespace BackEnd
                 return null;
             }
         }
+        /// <summary>
+        /// Obtiene la informacion de todos los colaboradores.
+        /// Si no tiene privilegios se mostraran solo los colaboradores de su area.
+        /// </summary>
+        /// <param name="us">Obtiene el id del usuario</param>
+        /// <returns>Devuelve la lista de los colaboradores obtenidos.</returns>
         public List<Colaborador> ConsultaColaboradores(Usuario us)
         {
             try
@@ -179,6 +209,11 @@ namespace BackEnd
                 return null;
             }
         }
+        /// <summary>
+        /// Devuelve la lista de todos los usuarios, exceptuando al usuario actual.
+        /// </summary>
+        /// <param name="us">Obtiene el id del usuario.</param>
+        /// <returns>Devuelve la lista de los usuarios.</returns>
         public List<Usuario> ConsultaUsuarios(Usuario us)
         {
             try
@@ -207,6 +242,12 @@ namespace BackEnd
                 return null;
             }
         }
+        /// <summary>
+        /// Devuelve todas las areas.
+        /// Si no tiene privilegios devuelve su propia area.
+        /// </summary>
+        /// <param name="us">obtiene el id del usuario para saber si tiene privilegios.</param>
+        /// <returns>Devuelve la lista de las areas.</returns>
         public List<String> BusquedaArea(Usuario us)
         {
             using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities()) {
@@ -228,6 +269,11 @@ namespace BackEnd
                 }
             }
         }
+        /// <summary>
+        /// Devuelve los puestos del area seleccionada.
+        /// </summary>
+        /// <param name="DescArea">Obtiene el area.</param>
+        /// <returns>Devuelve la lista de los puestos.</returns>
         public List<String> BusquedaPuesto(string DescArea)
         {
             using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
@@ -241,6 +287,10 @@ namespace BackEnd
                 return query;
             }
         }
+        /// <summary>
+        /// Obtiene los generos.
+        /// </summary>
+        /// <returns>Devuelve los generos.</returns>
         public List<String> BusquedaGenero()
         {
             using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
@@ -252,6 +302,13 @@ namespace BackEnd
         }
         
         #region Usuarios
+        /// <summary>
+        /// Registra un nuevo usuario solo si no existe.
+        /// </summary>
+        /// <param name="ID">Obtiene el id del usuario.</param>
+        /// <param name="Contrasenna">Obtiene la contraseña.</param>
+        /// <param name="Privilegio">Obtiene si cuenta con privilegios.</param>
+        /// <returns>devuelve un booleano, true = se registro, false = fallo el registro.</returns>
         public bool RegistrarUsuario(int ID, string Contrasenna, bool Privilegio)
         {
             if (BusquedaUsuario(ID) == null)
@@ -272,6 +329,13 @@ namespace BackEnd
                 return false;
             }
         }
+        /// <summary>
+        /// Modifica la informacion de un usuario.
+        /// </summary>
+        /// <param name="ID">Obtiene el id </param>
+        /// <param name="Contrasenna">Obtiene la nueva contraseña.</param>
+        /// <param name="Privilegio">Obtiene el nuevo privilegio.</param>
+        /// <returns>Devuelve un booleano, true = se realizo la actualizacion, false = fallo la actualizacion.</returns>
         public bool ActualizarUsuario(int ID, string Contrasenna, bool Privilegio)
         {
             if (BusquedaUsuario(ID) == null)
@@ -289,6 +353,11 @@ namespace BackEnd
                 }
             }
         }
+        /// <summary>
+        /// Elimina el usuario especificado
+        /// </summary>
+        /// <param name="ID">Obtiene el id del usaurio.</param>
+        /// <returns>Devuelve un booleano, true = se elimino el usuario, false = no se realizo la eliminacion del usuario.</returns>
         public bool EliminarUsuario(int ID)
         {
             if (BusquedaUsuario(ID) == null)
@@ -309,6 +378,18 @@ namespace BackEnd
         #endregion
 
         #region Colaboradores
+        /// <summary>
+        /// Registra un nuevo colaborador.
+        /// </summary>
+        /// <param name="ID">obitene el id del colaborador.</param>
+        /// <param name="Nombre">Obtiene el nombre del colaborador.</param>
+        /// <param name="Genero">Obtiene el genero del colaborador.</param>
+        /// <param name="Edad">Obtiene la edad del colaborador.</param>
+        /// <param name="Fecha_Nacimiento">Obtiene la fecha de nacimiento del colaborador.</param>
+        /// <param name="Fecha_Ingreso">Obtiene la fecha de ingres o del colaborador.</param>
+        /// <param name="Desc_Puesto">Obtiene el puesto del colaborador.</param>
+        /// <param name="Desc_Area">Obtiene el area del colaborador.</param>
+        /// <returns>Devuelve un booleano, true = se realizo el registro, false = fallo el registro.</returns>
         public bool RegistrarColaborador(int ID, string Nombre, string Genero, int Edad, DateTime Fecha_Nacimiento, DateTime Fecha_Ingreso, string Desc_Puesto, string Desc_Area)
         {
             if (BusquedaColaborador(ID) == null)
@@ -340,6 +421,18 @@ namespace BackEnd
                 return false;
             }
         }
+        /// <summary>
+        /// Modifica la informacion del colaborador.
+        /// </summary>
+        /// <param name="ID">obitene el id del colaborador.</param>
+        /// <param name="Nombre">Obtiene el nombre del colaborador.</param>
+        /// <param name="Genero">Obtiene el genero del colaborador.</param>
+        /// <param name="Edad">Obtiene la edad del colaborador.</param>
+        /// <param name="Fecha_Nacimiento">Obtiene la fecha de nacimiento del colaborador.</param>
+        /// <param name="Fecha_Ingreso">Obtiene la fecha de ingres o del colaborador.</param>
+        /// <param name="Desc_Puesto">Obtiene el puesto del colaborador.</param>
+        /// <param name="Desc_Area">Obtiene el area del colaborador.</param>
+        /// <returns>Devuelve un booleano, true = se actualizo correctamente el colaborador, false = no se pudo actuañlizar el colaborador.</returns>
         public bool ActualizarColaborador(int ID, string Nombre, string Genero, int Edad, DateTime Fecha_Nacimiento, DateTime Fecha_Ingreso, string Desc_Puesto, string Desc_Area)
         {
             if (BusquedaColaborador(ID) == null)
@@ -370,6 +463,11 @@ namespace BackEnd
                 }
             }
         }
+        /// <summary>
+        /// Elimina el colaborador.
+        /// </summary>
+        /// <param name="ID">Obtiene el id del colaborador.</param>
+        /// <returns>Devuelve un booleano, true = se elimino al colaborador, false = fallo al eliminar al colaborador.</returns>
         public bool EliminarColaborador(int ID)
         {
             if (BusquedaColaborador(ID) == null)
@@ -397,6 +495,10 @@ namespace BackEnd
         #endregion
 
         #region Excel
+        /// <summary>
+        /// Se exporta la informacion a un excel.
+        /// </summary>
+        /// <returns>Devuelve un booleano, true = se exporto correctamente, false = fallo al exportar el documento.</returns>
         public bool ExportarExcel()
         {
             SLDocument slDocumento = new SLDocument();
@@ -525,6 +627,10 @@ namespace BackEnd
         #endregion
 
         #region Bitacora
+        /// <summary>
+        /// Se registra la entrada del usuario.
+        /// </summary>
+        /// <param name="ID">Se obtiene el ID del usuario para crear un nuevo registro.</param>
         public void registrarEntrada(int ID)
         {
             using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
@@ -538,6 +644,10 @@ namespace BackEnd
                 PE.SaveChanges();
             }
         }
+        /// <summary>
+        /// Se registra la salida del usuario.
+        /// </summary>
+        /// <param name="ID">Se obtiene el ID del usuario para buscar el ultimo registro.</param>
         public void registrarSalida(int ID)
         {
             using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
@@ -550,6 +660,12 @@ namespace BackEnd
         #endregion
 
         #region Reporte
+        /// <summary>
+        /// Se registra cada accion que realize el usuario en la aplicacion.
+        /// </summary>
+        /// <param name="usu">Se obtiene el id del usuario.</param>
+        /// <param name="col">se obtiene el id del colaborador afectado. si es igual a 0 significa que el afectado fue la informacion.</param>
+        /// <param name="eve">El id del evento realizado.</param>
         public void registrarEvento(int usu, int col, int eve)
         {
             using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())

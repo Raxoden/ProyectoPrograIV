@@ -13,14 +13,21 @@ namespace FrontEnd
 {
     public partial class AdmColaboradores : Form
     {
+        /*
+         *fdb = variable para instaciar las funciones de la aplicacion.
+         * Usuario = Obtiene el usuario.
+         */
         FuncionesDB fdb = new FuncionesDB();
         Usuario Usuario;
+
+        //En el constructor se obtiene el usuario.
         public AdmColaboradores(Usuario Usuario)
         {
             InitializeComponent();
             this.Usuario = Usuario;
         }
         
+        //Se cargan los data grid views y se definen las fechas minima y maxima. 
         private void AdmColaboradores_Load(object sender, EventArgs e)
         {
             dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
@@ -32,6 +39,9 @@ namespace FrontEnd
             dtpNacimiento.MinDate = System.DateTime.Now.AddYears(-100);
         }
 
+        /// <summary>
+        /// Se valida que todos los campos esten llenos.
+        /// </summary>
         public bool Validacion()
         {
             if (String.IsNullOrEmpty(tbID.Text) || String.IsNullOrEmpty(tbNombre.Text) || String.IsNullOrEmpty(tbEdad.Text))
@@ -43,12 +53,14 @@ namespace FrontEnd
             }
         }
 
+        //Al cerrarse el formulario se cancela y solo de hace invisible.
         private void AdmColaboradores_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             this.Visible = false;
         }
 
+        //Crea un nuevo colaborador.
         private void btCrear_Click(object sender, EventArgs e)
         {
             if (Validacion())
@@ -69,26 +81,27 @@ namespace FrontEnd
             }
         }
 
+        //Se obtienen los puestos del area correspondiende.
         private void cbArea_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbPuesto.DataSource = fdb.BusquedaPuesto(cbArea.Text);
         }
-
+        //Evita que se modifiquen los combo box.
         private void cbGenero_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
+        //Evita que se modifiquen los combo box.
         private void cbArea_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
+        //Evita que se modifiquen los combo box.
         private void cbPuesto_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
+        //Permite que solo se digiten numeros.
         private void tbEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Char.IsDigit(e.KeyChar) && tbEdad.Text.Length < 2) || e.KeyChar == Convert.ToChar(Keys.Back))
@@ -100,7 +113,7 @@ namespace FrontEnd
                 e.Handled = true;
             }
         }
-
+        //Permite que solo se digiten numeros.
         private void tbID_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Char.IsDigit(e.KeyChar) && tbID.Text.Length <= 8) || e.KeyChar == Convert.ToChar(Keys.Back))
@@ -112,7 +125,7 @@ namespace FrontEnd
                 e.Handled = true;
             }
         }
-
+        //Evita que se digiten numeros en el nombre.
         private void tbNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Space) || e.KeyChar == Convert.ToChar(Keys.Back))
@@ -124,6 +137,7 @@ namespace FrontEnd
                 e.Handled = true;
             }
         }
+        //Modifica el colaborador.
         private void btModificar_Click(object sender, EventArgs e)
         {
             if (Validacion())
@@ -145,6 +159,7 @@ namespace FrontEnd
                 MessageBox.Show("Debe de llenar todos los campos");
             }
         }
+        //Elimina al colaborador.
         private void btEliminar_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(tbID.Text))
@@ -165,6 +180,7 @@ namespace FrontEnd
                 }
             }
         }
+        //Obtiene la informacion de la fila clickeada y la pone en sus campos correspondientes.
         private void dgvColaboradores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbID.Text = dgvColaboradores.CurrentRow.Cells[0].Value.ToString();
