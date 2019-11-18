@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="btCrear.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btCrear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -144,7 +141,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btCrear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 71</value>
+    <value>-2, 95</value>
   </data>
   <data name="btCrear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -171,9 +168,6 @@
   <data name="&gt;&gt;btCrear.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="btModificar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btModificar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -207,7 +201,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btModificar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 126</value>
+    <value>-2, 150</value>
   </data>
   <data name="btModificar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -233,9 +227,6 @@
   <data name="&gt;&gt;btModificar.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="btEliminar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btEliminar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -290,7 +281,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="btEliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 184</value>
+    <value>-4, 208</value>
   </data>
   <data name="btEliminar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -316,9 +307,6 @@
   <data name="&gt;&gt;btEliminar.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="btExportar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btExportar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -346,7 +334,7 @@
     <value>NoControl</value>
   </data>
   <data name="btExportar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 240</value>
+    <value>-2, 264</value>
   </data>
   <data name="btExportar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -372,9 +360,6 @@
   <data name="&gt;&gt;btExportar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="MenuVertical.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -413,7 +398,7 @@
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 4</value>
+    <value>12, 12</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 41</value>
@@ -446,7 +431,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 13</value>
+    <value>67, 25</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 20</value>
@@ -469,9 +454,6 @@
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="pictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -626,9 +608,6 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="shapeContainer1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="shapeContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -701,9 +680,6 @@
   <data name="&gt;&gt;MenuVertical.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="btnslide.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btnslide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -793,66 +769,6 @@
   <data name="&gt;&gt;btnslide.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="BarraTitulo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="iconcerrar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>BarraTitulo</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;iconcerrar.Name" xml:space="preserve">
-    <value>iconcerrar</value>
-  </data>
-  <data name="&gt;&gt;iconcerrar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;iconcerrar.Parent" xml:space="preserve">
-    <value>BarraTitulo</value>
-  </data>
-  <data name="&gt;&gt;iconcerrar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="BarraTitulo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="BarraTitulo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 0</value>
-  </data>
-  <data name="BarraTitulo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>597, 45</value>
-  </data>
-  <data name="BarraTitulo.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;BarraTitulo.Name" xml:space="preserve">
-    <value>BarraTitulo</value>
-  </data>
-  <data name="&gt;&gt;BarraTitulo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BarraTitulo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;BarraTitulo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -883,9 +799,6 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="iconcerrar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="iconcerrar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -940,9 +853,30 @@
   <data name="&gt;&gt;iconcerrar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="tbContrasenna.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="BarraTitulo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="BarraTitulo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 0</value>
+  </data>
+  <data name="BarraTitulo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>597, 45</value>
+  </data>
+  <data name="BarraTitulo.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;BarraTitulo.Name" xml:space="preserve">
+    <value>BarraTitulo</value>
+  </data>
+  <data name="&gt;&gt;BarraTitulo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BarraTitulo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BarraTitulo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="tbContrasenna.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 62</value>
   </data>
@@ -967,9 +901,6 @@
   <data name="&gt;&gt;tbContrasenna.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <metadata name="cbPrivilegio.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="cbPrivilegio.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1006,9 +937,6 @@
   <data name="&gt;&gt;cbPrivilegio.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <metadata name="tbConfirmar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbConfirmar.Location" type="System.Drawing.Point, System.Drawing">
     <value>224, 101</value>
   </data>
@@ -1033,9 +961,6 @@
   <data name="&gt;&gt;tbConfirmar.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1072,9 +997,6 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1111,9 +1033,6 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="tbId.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbId.Location" type="System.Drawing.Point, System.Drawing">
     <value>80, 25</value>
   </data>
@@ -1138,9 +1057,6 @@
   <data name="&gt;&gt;tbId.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="dgvColaboradores.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="dgvColaboradores.Location" type="System.Drawing.Point, System.Drawing">
     <value>318, 166</value>
   </data>
@@ -1168,9 +1084,6 @@
   <data name="&gt;&gt;dgvColaboradores.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1207,9 +1120,6 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="dgvUsuarios.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="dgvUsuarios.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 166</value>
   </data>
@@ -1237,9 +1147,6 @@
   <data name="&gt;&gt;dgvUsuarios.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="panelContenedor.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="panelContenedor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1265,9 +1172,6 @@
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
