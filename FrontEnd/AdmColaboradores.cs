@@ -234,12 +234,11 @@ namespace FrontEnd
         {
             try
             {
-                System.Diagnostics.Process.Start("aqui va el manual");
+                System.Diagnostics.Process.Start(System.IO.Path.Combine(Application.StartupPath, "Manual_de_Usuario.pdf"));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("El manual no se ha encontrado, esposible que haya sido eliminado: " + ex.Message);
             }
         }
     }
