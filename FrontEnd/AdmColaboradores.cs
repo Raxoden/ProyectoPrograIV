@@ -43,7 +43,8 @@ namespace FrontEnd
             if (String.IsNullOrEmpty(tbID.Text) || String.IsNullOrEmpty(tbNombre.Text) || String.IsNullOrEmpty(tbEdad.Text))
             {
                 return false;
-            } else
+            }
+            else
             {
                 return true;
             }
@@ -64,12 +65,14 @@ namespace FrontEnd
                     fdb.registrarEvento(Usuario.ID_Usuario, Convert.ToInt32(tbID.Text), 1);
                     dgvColaboradores.DataSource = fdb.ConsultaColaboradores(Usuario);
                     MessageBox.Show("El colaborador se registro exitosamente.");
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Hubo un error al registrar el colaborador.");
                 }
-                
-            } else
+
+            }
+            else
             {
                 MessageBox.Show("Debe de llenar todos los campos");
             }
@@ -207,6 +210,19 @@ namespace FrontEnd
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("aqui va el manual");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
