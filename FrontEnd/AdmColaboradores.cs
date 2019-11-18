@@ -193,7 +193,7 @@ namespace FrontEnd
 
         private void iconcerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close(); 
         }
 
         private void btnslide_Click(object sender, EventArgs e)
