@@ -50,7 +50,7 @@
             this.btModificar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.z = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -59,13 +59,15 @@
             this.iconcerrar = new System.Windows.Forms.PictureBox();
             this.btnslide = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             this.MenuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z)).BeginInit();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvColaboradores
@@ -302,6 +304,7 @@
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.MenuVertical.Controls.Add(this.pictureBox1);
+            this.MenuVertical.Controls.Add(this.z);
             this.MenuVertical.Controls.Add(this.label9);
             this.MenuVertical.Controls.Add(this.btEliminar);
             this.MenuVertical.Controls.Add(this.btCrear);
@@ -313,16 +316,16 @@
             this.MenuVertical.Size = new System.Drawing.Size(250, 511);
             this.MenuVertical.TabIndex = 15;
             // 
-            // pictureBox1
+            // z
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(90, 443);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.z.Image = ((System.Drawing.Image)(resources.GetObject("z.Image")));
+            this.z.Location = new System.Drawing.Point(90, 443);
+            this.z.Name = "z";
+            this.z.Size = new System.Drawing.Size(51, 40);
+            this.z.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.z.TabIndex = 16;
+            this.z.TabStop = false;
+            this.z.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label9
             // 
@@ -330,11 +333,11 @@
             this.label9.Font = new System.Drawing.Font("Perpetua Titling MT", 12F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(5, 13);
+            this.label9.Location = new System.Drawing.Point(51, 13);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(239, 20);
+            this.label9.Size = new System.Drawing.Size(177, 20);
             this.label9.TabIndex = 14;
-            this.label9.Text = "MUNICIPALIDAD SAN JOSE";
+            this.label9.Text = "MUNICIPALIDAD SJ";
             // 
             // shapeContainer1
             // 
@@ -434,6 +437,16 @@
             this.panel1.Size = new System.Drawing.Size(813, 466);
             this.panel1.TabIndex = 18;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // AdmColaboradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,13 +468,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).EndInit();
             this.MenuVertical.ResumeLayout(false);
             this.MenuVertical.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.z)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconcerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -495,8 +509,9 @@
         private System.Windows.Forms.PictureBox iconcerrar;
         private System.Windows.Forms.PictureBox btnslide;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox z;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
