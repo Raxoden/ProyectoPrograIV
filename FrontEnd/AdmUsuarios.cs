@@ -57,8 +57,8 @@ namespace FrontEnd
         {
             try
             {
-                tbId.Text = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
-                if (Convert.ToBoolean(dgvUsuarios.CurrentRow.Cells[4].Value))
+                tbId.Text = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();
+                if (Convert.ToBoolean(dgvUsuarios.CurrentRow.Cells[5].Value))
                 {
                     cbPrivilegio.Checked = true;
                 }
@@ -167,14 +167,7 @@ namespace FrontEnd
         //Evita que se digiten letras y solo permite numeros y borrar.
         private void tbId_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Char.IsDigit(e.KeyChar) && tbId.Text.Length <= 8) || e.KeyChar == Convert.ToChar(Keys.Back))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+            e.Handled = true;
         }
 
         //Exporta la informacion a un excel.
@@ -221,6 +214,11 @@ namespace FrontEnd
             {
                 throw;
             }
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

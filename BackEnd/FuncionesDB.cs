@@ -619,9 +619,13 @@ namespace BackEnd
                 tbl.SetTableStyle(SLTableStyleTypeValues.Medium1);
                 slDocumento.InsertTable(tbl);
                 slDocumento.AutoFitColumn("A", "S");
-
-                slDocumento.SaveAs(@"C:\Users\andre\Desktop\ListadoColaboradores.xlsx");
-                MessageBox.Show("Datos exportados exitosamente al documento 'ListadoColaboradores.xlsx'");
+                string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Administracion Municipalidad";
+                if (!Directory.Exists(filePath))
+                {
+                    Directory.CreateDirectory(filePath);
+                }
+                slDocumento.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Administracion Municipalidad\ListadoColaboradores.xlsx");
+                MessageBox.Show("Datos exportados exitosamente en '" + filePath + "ListadoColaboradores.xlsx'");
             }
             return true;
         }
@@ -653,7 +657,7 @@ namespace BackEnd
         {
             using (SistemaPlanillaEntities PE = new SistemaPlanillaEntities())
             {
-                DataBase.Bitacora bitacora = PE.Bitacora.Where(x => x.ID_Usuario == ID && x.Fecha == DateTime.Today).FirstOrDefault();
+                DataBase.Bitacora bitacora = PE.Bitacora.Where(x => x.ID_Usuario == ID && x.Fecha == DateTime.Today).OrderByDescending(x => x.ID_Bitacora).FirstOrDefault();
                 bitacora.Hora_Salida = DateTime.Now.TimeOfDay;
                 PE.SaveChanges();
             }

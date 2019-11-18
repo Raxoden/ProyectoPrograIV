@@ -258,6 +258,7 @@
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowTemplate.Height = 24;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
             // panelContenedor
             // 

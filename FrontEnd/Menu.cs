@@ -37,8 +37,6 @@ namespace FrontEnd
         public Menu(int ID_Usuario)
         {
             Usuario = fdb.BusquedaUsuario(ID_Usuario);
-            ac = new AdmColaboradores(Usuario, this);
-            au = new AdmUsuarios(Usuario, this);
             InitializeComponent();
         }
 
@@ -65,6 +63,7 @@ namespace FrontEnd
         /// </summary>
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            au = new AdmUsuarios(Usuario, this);
             au.Show();
             this.Visible = false;
         }
@@ -75,6 +74,7 @@ namespace FrontEnd
         /// </summary>
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ac = new AdmColaboradores(Usuario, this);
             ac.Show();
             this.Visible = false;
         }
